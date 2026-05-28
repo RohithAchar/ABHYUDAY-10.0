@@ -63,8 +63,8 @@ const events = [
     "₹3,000 — 3rd Place"
   ],
   contact: [
-    { name: "Coordinator 1", phone: "+91 XXXXXXXX" },
-    { name: "Coordinator 2", phone: "+91 XXXXXXXX" }
+    { name: "V Varun Murthy", phone: "+91 9353751069" },
+    { name: "Sinchana Shetty", phone: "+91 8971638535" }
   ],
 },
   {
@@ -93,10 +93,16 @@ const events = [
     "₹4,000 — 2nd Place",
     "₹2,000 — 3rd Place"
   ],
-  contact: [
-    { name: "Coordinator 1", phone: "+91 XXXXXXXX" },
-    { name: "Coordinator 2", phone: "+91 XXXXXXXX" }
+ contact: {
+  UG: [
+    { name: "Chandana D", phone: "+91 9686915540" },
+    { name: "Bhumika", phone: "+91 8747852889" }
   ],
+  PG: [
+    { name: "Mayun Joshi", phone: "+91 9741092761" },
+    { name: "Bhanupratap Reddy", phone: "+91 6360037717" }
+  ]
+},
 },
   {
   slug: "vecnas-arena",
@@ -125,8 +131,9 @@ const events = [
     "₹4,000 — 3rd Place"
   ],
   contact: [
-    { name: "Coordinator 1", phone: "+91 XXXXXXXX" },
-    { name: "Coordinator 2", phone: "+91 XXXXXXXX" }
+    { name: "Bala Swamy I", phone: "+91 6374262694" },
+    { name: "Anush K", phone: "+91 8088718755" },
+    { name: "Akshay R", phone: "+91 8904443218" },
   ],
 },
  {
@@ -152,10 +159,16 @@ const events = [
     "Judges’ decisions are final",
   ],
   prizes: ["₹7,000 — 1st Place", "₹3,500 — 2nd Place", "₹1,500 — 3rd Place"],
-  contact: [
-    { name: "Coordinator 1", phone: "+91 XXXXXXXX" },
-    { name: "Coordinator 2", phone: "+91 XXXXXXXX" }
+  contact: {
+  UG: [
+    { name: "Ruchitha Reddy M P", phone: "+91 9611588905" },
+    { name: "Shreya Gupta", phone: "+91 XXXXXXXX" }
   ],
+  PG: [
+    { name: "K D Navya ", phone: "+91 9901921771" },
+    { name: "Vaibhav", phone: "+91 9143626262" }
+  ]
+},
 },
 {
   slug: "the-mind-flayer",
@@ -208,10 +221,16 @@ const events = [
     "Judges’ decisions are final",
   ],
   prizes: ["₹9,000 — 1st Place", "₹4,500 — 2nd Place", "₹2,000 — 3rd Place"],
-  contact: [
-    { name: "Coordinator 1", phone: "+91 XXXXXXXX" },
-    { name: "Coordinator 2", phone: "+91 XXXXXXXX" }
+  contact: {
+  UG: [
+    { name: "Shivu prasad", phone: "+91 87622 33537" },
+    { name: "Shreenivasa", phone: "+91 9916925969" }
   ],
+  PG: [
+    { name: "Abjeet Yadav", phone: "+91 9353266834" },
+    { name: "Alfiya ", phone: "+91 7676793985" }
+  ]
+},
 },
 {
   slug: "reel-verse",
@@ -237,8 +256,8 @@ const events = [
   ],
   prizes: ["₹6,000 — 1st Place", "₹3,000 — 2nd Place", "₹1,500 — 3rd Place"],
   contact: [
-    { name: "Coordinator 1", phone: "+91 XXXXXXXX" },
-    { name: "Coordinator 2", phone: "+91 XXXXXXXX" }
+    { name: "Anish Kumar S", phone: "+91 8762575776" },
+    { name: "Anju Shreya K M", phone: "+91 6363740142" }
   ],
 },
 {
@@ -265,8 +284,8 @@ const events = [
   ],
   prizes: ["₹8,000 — 1st Place", "₹4,000 — 2nd Place", "₹2,000 — 3rd Place"],
   contact: [
-    { name: "Coordinator 1", phone: "+91 XXXXXXXX" },
-    { name: "Coordinator 2", phone: "+91 XXXXXXXX" }
+    { name: "Meghana Shree K", phone: "+91 7975747738" },
+    { name: "Raksha", phone: "+91 8296469415" }
   ],
 },
 {
@@ -484,21 +503,26 @@ export default function EventDetail() {
         
 
         {/* Meta strip */}
-       <div className="grid grid-cols-4 gap-px bg-red-500/10 border border-red-500/15 mb-12">
-          {[
-            { label: "Date", value: event.date },
-            { label: "Time", value: event.time },
-              { label: "Fees", value: event.fees ? `₹${event.fees}` : "" },
-            { label: "Participants", value: event.participants },
-          ].map((item) => (
-            <div key={item.label} className="ed-meta-item bg-black px-5 py-5 md:px-8 md:py-6">
-              <p className="text-red-500/60 font-mono text-[9px] uppercase tracking-[0.35em] mb-2">
-                {item.label}
-              </p>
-              <p className="text-white font-mono text-sm md:text-base">{item.value}</p>
-            </div>
-          ))}
-        </div>
+       <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-red-500/10 border border-red-500/15 mb-12">
+  {[
+    { label: "Date", value: event.date },
+    { label: "Time", value: event.time },
+    { label: "Fees", value: event.fees ? `₹${event.fees}` : "" },
+    { label: "Participants", value: event.participants },
+  ].map((item) => (
+    <div
+      key={item.label}
+      className="ed-meta-item bg-black px-4 py-4 md:px-8 md:py-6"
+    >
+      <p className="text-red-500/60 font-mono text-[9px] uppercase tracking-[0.35em] mb-2">
+        {item.label}
+      </p>
+      <p className="text-white font-mono text-sm md:text-base">
+        {item.value}
+      </p>
+    </div>
+  ))}
+</div>
 
         {/* Two column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12">
@@ -553,25 +577,52 @@ export default function EventDetail() {
               </ul>
             </div>
 
-            {/* Contact */}
+          
    {/* Contact */}
 <div className="ed-section border border-red-500/15 bg-black/60 backdrop-blur-sm p-6 md:p-8">
-  <p className="text-red-500/60 font-mono text-[9px] uppercase tracking-[0.35em] mb-4">
+  <p className="text-red-500/60 font-mono text-[9px] uppercase tracking-[0.35em] mb-6">
     Contact
   </p>
 
-  <div className="space-y-4">
-    {event.contact.map((person, i) => (
-      <div key={i} className="border-l border-red-500/20 pl-4">
-        <p className="text-white text-sm md:text-base font-semibold">
-          {person.name}
-        </p>
-        <p className="text-white/60 font-mono text-sm">
-          {person.phone}
-        </p>
-      </div>
-    ))}
-  </div>
+  {/* Normal Contact Array */}
+  {Array.isArray(event.contact) ? (
+    <div className="space-y-4">
+      {event.contact.map((person, i) => (
+        <div key={i} className="border-l border-red-500/20 pl-4">
+          <p className="text-white text-sm md:text-base font-semibold">
+            {person.name}
+          </p>
+          <p className="text-white/60 font-mono text-sm">
+            {person.phone}
+          </p>
+        </div>
+      ))}
+    </div>
+  ) : (
+    /* UG / PG Contact Object */
+    <div className="space-y-6">
+      {Object.entries(event.contact).map(([category, contacts]) => (
+        <div key={category}>
+          <h3 className="text-red-500 font-mono text-xs uppercase tracking-[0.3em] mb-3">
+            {category}
+          </h3>
+
+          <div className="space-y-3">
+            {contacts.map((person, i) => (
+              <div key={i} className="border-l border-red-500/20 pl-4">
+                <p className="text-white text-sm md:text-base font-semibold">
+                  {person.name}
+                </p>
+                <p className="text-white/60 font-mono text-sm">
+                  {person.phone}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
 </div>
           </div>
         </div>

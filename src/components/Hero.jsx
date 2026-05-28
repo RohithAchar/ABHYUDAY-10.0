@@ -430,7 +430,7 @@ export const Hero = ({ incrementImagesLoaded }) => {
                   { label: "LOCATION", value: "MSRIT CAMPUS" },
                   { label: "TRANSMISSION", value: "ACTIVE" },
                   { label: "STATUS", value: "OPEN" },
-                  { label: "DATE", value: "OCT 10 1986" },
+                  { label: "DATE", value: "June 12 2026" },
                   { label: "CHANNEL", value: "v1.0" },
                 ].map((item, index) => (
                   <div
