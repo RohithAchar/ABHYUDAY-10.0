@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
     desc: "Crack clues and race against time.",
     date: "15 Feb 2026",
     time: "10:00 AM",
-    image: "/assets/Dustin.webp",
+    image: "/assets/11.jpg",
   },
 
   {
@@ -419,7 +419,7 @@ const EventsSection = () => {
 
                   object-cover
 
-                  brightness-[0.45]
+                  brightness-[0.95]
                   contrast-[1.1]
 
                   transition-transform
@@ -499,7 +499,7 @@ const EventsSection = () => {
 
               <h3
                 className="
-                text-white
+                text-[#F8FAFC]
 
     text-[2.1rem]
     sm:text-[2.7rem]

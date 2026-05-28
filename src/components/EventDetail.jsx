@@ -12,9 +12,9 @@ const events = [
   desc: "Crack clues, solve mysteries, and race against time in the ultimate treasure hunt adventure.",
   date: "12 June 2026",
   time: "10:00 AM",
-  venue: "",
+  participants: "3-4",
   fees:"600",
-  image: "/assets/Dustin.webp",
+  image: "/assets/11.jpg",
   rules: [
     "Participants: 3–4 members per team",
     "Maximum two teams per college",
@@ -44,7 +44,7 @@ const events = [
   desc: "Test your cybersecurity skills through intense challenges and real-world scenarios.",
   date: "12 June 2026",
   time: "10:00 AM",
-  venue: "",
+  participants: "2-4",
   fees:"600",
   image: "/assets/Dustin.webp",
   rules: [
@@ -76,7 +76,7 @@ const events = [
   desc: "Showcase your creativity and build visually stunning user experiences.",
   date: "12 June 2026",
   time: "10:00 AM",
-  venue: "",
+  participants: "2",
   fees:"300",
   image: "/assets/Dustin.webp",
   rules: [
@@ -107,7 +107,7 @@ const events = [
   desc: "Battle against top squads and dominate the arena in an intense BGMI showdown.",
  date: "12 June 2026",
   time: "10:00 AM",
-  venue: "",
+  participants: "4",
   fees:"600",
   image: "/assets/Dustin.webp",
   rules: [
@@ -138,7 +138,7 @@ const events = [
   desc: "Challenge your technical knowledge and compete in a fast-paced IT quiz battle.",
   date: "12 June 2026",
   time: "10:00 AM",
-  venue: "",
+  participants: "1-2",
   fees:"300",
   image: "/assets/Dustin.webp",
   rules: [
@@ -166,7 +166,7 @@ const events = [
   desc: "Present groundbreaking ideas and compete to build the next big innovation.",
   date: "12 June 2026",
   time: "10:00 AM",
-  venue: "",
+  participants: "1-3",
   fees:"400",
   image: "/assets/Dustin.webp",
   rules: [
@@ -194,7 +194,7 @@ const events = [
   desc: "Compete in intense coding rounds and prove your programming skills.",
   date: "12 June 2026",
   time: "10:00 AM",
-  venue: "",
+  participants: "1-2",
   fees:"300",
   image: "/assets/Dustin.webp",
   rules: [
@@ -222,7 +222,7 @@ const events = [
   desc: "Create engaging cinematic reels and bring your storytelling skills to life.",
   date: "12 June 2026",
   time: "10:00 AM",
-  venue: "",
+  participants: "1-2",
   fees:"300",
   image: "/assets/Dustin.webp",
   rules: [
@@ -250,7 +250,7 @@ const events = [
   desc: "Decode technical mysteries and solve challenging puzzles under pressure.",
   date: "12 June 2026",
   time: "10:00 AM",
-  venue: "",
+  participants: "2-3",
   fees:"400",
   image: "/assets/Dustin.webp",
   rules: [
@@ -278,7 +278,7 @@ const events = [
   desc: "Capture cinematic moments and showcase your storytelling through visuals.",
   date: "12 June 2026",
   time: "10:00 AM",
-  venue: "",
+  participants: "2",
   fees:"300",
   image: "/assets/Dustin.webp",
   rules: [
@@ -489,7 +489,7 @@ export default function EventDetail() {
             { label: "Date", value: event.date },
             { label: "Time", value: event.time },
               { label: "Fees", value: event.fees ? `₹${event.fees}` : "" },
-            { label: "Venue", value: event.venue },
+            { label: "Participants", value: event.participants },
           ].map((item) => (
             <div key={item.label} className="ed-meta-item bg-black px-5 py-5 md:px-8 md:py-6">
               <p className="text-red-500/60 font-mono text-[9px] uppercase tracking-[0.35em] mb-2">

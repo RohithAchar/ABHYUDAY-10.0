@@ -143,6 +143,51 @@ const Footer = () => {
               Enter the upside down.
               <br />A cinematic technical experience at MCA, MSRIT.
             </p>
+            <br></br>
+            <p
+              className="
+                text-red-500
+                uppercase
+                tracking-[0.3em]
+                text-[10px]
+                font-mono
+                mb-2
+              "
+            >
+              Faculty Coordinator
+            </p>
+      
+            <p className="text-sm md:text-base text-white/50">
+              
+            </p>
+            <p className="text-sm md:text-base text-white/50">
+              Ms. Sahana :
+            </p>
+            <p className="text-sm md:text-base text-white/50">
+              Dr. Evangalin Geetha : 
+            </p>
+            <p
+              className="
+                text-red-500
+                uppercase
+                tracking-[0.3em]
+                text-[10px]
+                font-mono
+                mb-2
+                mt-2
+              "
+            >
+              Student Coordinator
+            </p>
+
+              
+            <p className="text-sm md:text-base text-white/50">
+             Khusal : +91 8217621915
+            </p>
+            <p className="text-sm md:text-base text-white/50">
+            Shravya : +91 8762723575
+            </p>
+
           </div>
 
           {/* Countdown */}
@@ -298,7 +343,7 @@ const Footer = () => {
                 font-mono
               "
             >
-              Theta Network [LIVE]
+              MSRIT Network [LIVE]
             </p>
           </div>
         </div>

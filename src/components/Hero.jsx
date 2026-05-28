@@ -285,13 +285,13 @@ export const Hero = ({ incrementImagesLoaded }) => {
             style={{ zIndex: 3 }}
           >
             <p className="tracking-[0.25em] text-sm md:text-base">
-              WELCOME TO THE
+              THE UPSIDE DOWN  
             </p>
             <h1 className="font-bold leading-none mt-2 text-[clamp(2.25rem,5vw,4rem)]">
-              UPSIDE <span>DOWN</span>
+              JUST WENT <span>ONLINE</span>
             </h1>
             <p className="tracking-[0.25em] mt-2 text-sm md:text-base">
-              MCA, MSRIT
+              MCA, MSRIT PRESENTS
             </p>
           </div>
 
@@ -347,12 +347,12 @@ export const Hero = ({ incrementImagesLoaded }) => {
           >
             <div className="flex items-center gap-2 mb-2 md:mb-3">
               <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500 animate-pulse" />
-              REC
+              LIVE
             </div>
-            <p>Transmission 07</p>
-            <p className="mt-1">Theta Network [LIVE]</p>
+            <p>Tech Fest 10.0</p>
+            <p className="mt-1">MSRIT Network [LIVE]</p>
             <p className="mt-1 text-red-300 break-words">
-              Feed: ABHYUDAY_SIGNAL_1986
+              Feed: ABHYUDAY_SIGNAL
             </p>
           </div>
 
@@ -367,7 +367,7 @@ export const Hero = ({ incrementImagesLoaded }) => {
           >
             <p>UPSIDE DOWN FREQUENCY</p>
             <p className="text-lg md:text-2xl mt-1 md:mt-2 text-red-500">
-              88.6 MHz
+              0.11 MHz
             </p>
             <p className="mt-1 md:mt-2">CHANNEL v1.0</p>
           </div>
@@ -394,7 +394,7 @@ export const Hero = ({ incrementImagesLoaded }) => {
   "
           >
             <p className="mt-12 md:mt-0 text-red-500 uppercase tracking-[0.22em] md:tracking-[0.5em] text-[9px] md:text-sm mb-3 md:mb-6 font-mono">
-              ENTER THE UPSIDE DOWN
+              ENTER THE UNKNOWN
             </p>
 
             <h1
@@ -419,7 +419,7 @@ export const Hero = ({ incrementImagesLoaded }) => {
             </div>
 
             <p className="mt-3 md:mt-5 text-red-500 uppercase tracking-[0.22em] md:tracking-[0.4em] text-[9px] md:text-sm font-mono">
-              SIGNAL DETECTED
+              10.0
             </p>
 
             {/* Metadata Cluster wrapper */}
@@ -456,7 +456,7 @@ export const Hero = ({ incrementImagesLoaded }) => {
                   { label: "Location", value: "MSRIT CAMPUS" },
                   { label: "Transmission", value: "ACTIVE" },
                   { label: "Status", value: "OPEN" },
-                  { label: "Date", value: "OCT 10 1986" },
+                  { label: "Date", value: "JUNE 12 2026" },
                   { label: "Channel", value: "v1.0" },
                 ].map((item, index) => (
                   <div key={index} className="metadata-item overflow-hidden">
