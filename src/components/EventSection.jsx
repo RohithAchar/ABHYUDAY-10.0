@@ -6,177 +6,126 @@ import { Link } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
   const events = [
-    {
-      id: "01",
-      slug: "SEARCH FOR WILL",
-      title: "SEARCH FOR WILL",
-      displayTitle: "Treasure Hunt",
-      subtitle: "CODE. BREAK. BUILD.",
-      desc: "48 hours to build the impossible.",
-      date: "15 Feb 2026",
-      time: "10:00 AM",
-      venue: "Main Auditorium",
-      rules: [
-        "Team size 2-4",
-        "Bring laptop",
-        "No plagiarism"
-      ],
-      image: "/assets/Dustin.webp",
-    },
-    {
-    id: "02",
-    slug: "tech-events",
-    title: "Tech Events",
+  {
+    id: "01",
+    slug: "search-for-will",
+    title: "SEARCH FOR WILL",
     displayTitle: "Treasure Hunt",
-    subtitle: "LOGIC. STRATEGY. SPEED.",
-    desc: "Test your skills. Solve. Outwit.",
-    date: "16 Feb 2026",
+    subtitle: "HUNT. SOLVE. SURVIVE.",
+    desc: "Crack clues and race against time.",
+    date: "15 Feb 2026",
+    time: "10:00 AM",
+    image: "/assets/Dustin.webp",
+  },
+
+  {
+    id: "02",
+    slug: "shadow-protocol",
+    title: "SHADOW PROTOCOL",
+    displayTitle: "Cyber Event",
+    subtitle: "HACK. DEFEND. DOMINATE.",
+    desc: "Test your cybersecurity skills.",
+    date: "15 Feb 2026",
     time: "11:00 AM",
-    venue: "Seminar Hall",
-    rules: [
-      "Individual participation",
-      "No external help",
-      "Time limit applies"
-    ],
     image: "/assets/Eleven.webp",
   },
+
   {
     id: "03",
-    slug: "workshops",
-    title: "Workshops",
-     displayTitle: "Treasure Hunt",
-    subtitle: "LEARN. EXPLORE. EVOLVE.",
-    desc: "Hands-on sessions by experts.",
-    date: "17 Feb 2026",
-    time: "2:00 PM",
-    venue: "Lab Block",
-    rules: [
-      "Registration mandatory",
-      "Bring laptop",
-      "Limited seats"
-    ],
+    slug: "the-hawkins-design-lab",
+    title: "THE HAWKINS DESIGN LAB",
+    displayTitle: "UI / UX",
+    subtitle: "DESIGN. CREATE. IMPRESS.",
+    desc: "Build stunning user experiences.",
+    date: "15 Feb 2026",
+    time: "12:00 PM",
     image: "/assets/Lucas.webp",
   },
+
   {
     id: "04",
-    slug: "open-mic",
-    title: "Open Mic",
-     displayTitle: "Treasure Hunt",
-    subtitle: "YOUR VOICE. THEIR EARS.",
-    desc: "Speak your truth.",
-    date: "18 Feb 2026",
-    time: "5:00 PM",
-    venue: "Open Stage",
-    rules: [
-      "Max 5 minutes per participant",
-      "No offensive content",
-      "Solo performance only"
-    ],
+    slug: "vecnas-arena",
+    title: "VECNAS ARENA",
+    displayTitle: "BGMI",
+    subtitle: "SURVIVE. FIGHT. WIN.",
+    desc: "Dominate the battleground.",
+    date: "15 Feb 2026",
+    time: "1:00 PM",
     image: "/assets/Will.webp",
   },
+
   {
     id: "05",
-    slug: "fun-events",
-    title: "Fun Events",
-     displayTitle: "Treasure Hunt",
-    subtitle: "GAMES. CHAOS. MEMORIES.",
-    desc: "Dive into the upside down.",
-    date: "19 Feb 2026",
-    time: "1:00 PM",
-    venue: "College Ground",
-    rules: [
-      "Open for all",
-      "Team events allowed",
-      "Follow event coordinator instructions"
-    ],
+    slug: "dustins-desk",
+    title: "DUSTINS DESK",
+    displayTitle: "IT Quiz",
+    subtitle: "THINK. ANSWER. WIN.",
+    desc: "Challenge your technical knowledge.",
+    date: "15 Feb 2026",
+    time: "2:00 PM",
     image: "/assets/Hopper.webp",
   },
+
   {
     id: "06",
-    slug: "mystery-event-1",
-    title: "Mystery Event",
-     displayTitle: "Treasure Hunt",
-    subtitle: "NOT EVERYTHING IS MEANT TO BE REVEALED.",
-    desc: "Something is coming.",
-    date: "20 Feb 2026",
-    time: "6:00 PM",
-    venue: "Secret Location",
-    rules: [
-      "No spoilers",
-      "Follow instructions carefully",
-      "Be on time"
-    ],
+    slug: "the-mind-flayer",
+    title: "THE MIND FLAYER",
+    displayTitle: "Ideathon",
+    subtitle: "IMAGINE. INNOVATE. PITCH.",
+    desc: "Turn ideas into impactful solutions.",
+    date: "15 Feb 2026",
+    time: "3:00 PM",
     image: "/assets/Nancy.webp",
   },
+
   {
     id: "07",
-    slug: "mystery-event-2",
-    title: "Mystery Event",
-     displayTitle: "Treasure Hunt",
-    subtitle: "NOT EVERYTHING IS MEANT TO BE REVEALED.",
-    desc: "Something is coming.",
-    date: "21 Feb 2026",
+    slug: "code-red",
+    title: "CODE RED",
+    displayTitle: "Coding",
+    subtitle: "CODE. DEBUG. CONQUER.",
+    desc: "Compete in intense coding battles.",
+    date: "15 Feb 2026",
     time: "4:00 PM",
-    venue: "Secret Location",
-    rules: [
-      "No spoilers",
-      "Follow instructions carefully",
-      "Be on time"
-    ],
     image: "/assets/Steve.webp",
   },
+
   {
     id: "08",
-    slug: "mystery-event-3",
-    title: "Mystery Event",
-     displayTitle: "Treasure Hunt",
-    subtitle: "NOT EVERYTHING IS MEANT TO BE REVEALED.",
-    desc: "Something is coming.",
-    date: "22 Feb 2026",
-    time: "3:00 PM",
-    venue: "Secret Location",
-    rules: [
-      "No spoilers",
-      "Follow instructions carefully",
-      "Be on time"
-    ],
-    image: "/assets/Mystery.webp",
+    slug: "reel-verse",
+    title: "REEL VERSE",
+    displayTitle: "Reels Making",
+    subtitle: "SHOOT. EDIT. CREATE.",
+    desc: "Create cinematic reels.",
+    date: "15 Feb 2026",
+    time: "5:00 PM",
+    image: "/assets/Murray.webp",
   },
+
   {
     id: "09",
-    slug: "mystery-event-4",
-    title: "Mystery Event",
-     displayTitle: "Treasure Hunt",
-    subtitle: "NOT EVERYTHING IS MEANT TO BE REVEALED.",
-    desc: "Something is coming.",
-    date: "23 Feb 2026",
-    time: "7:00 PM",
-    venue: "Secret Location",
-    rules: [
-      "No spoilers",
-      "Follow instructions carefully",
-      "Be on time"
-    ],
-    image: "/assets/Mystery.webp",
+    slug: "the-russian-code",
+    title: "THE RUSSIAN CODE",
+    displayTitle: "Tech Puzzle",
+    subtitle: "SOLVE. THINK. ESCAPE.",
+    desc: "Decode puzzles and unlock mysteries.",
+    date: "15 Feb 2026",
+    time: "6:00 PM",
+    image: "/assets/Steve.webp",
   },
+
   {
     id: "10",
-    slug: "mystery-event-5",
-    title: "Mystery Event",
-     displayTitle: "Treasure Hunt",
-    subtitle: "NOT EVERYTHING IS MEANT TO BE REVEALED.",
-    desc: "Something is coming.",
-    date: "24 Feb 2026",
-    time: "8:00 PM",
-    venue: "Secret Location",
-    rules: [
-      "No spoilers",
-      "Follow instructions carefully",
-      "Be on time"
-    ],
-    image: "/assets/Mystery.webp",
+    slug: "lights-flicker",
+    title: "LIGHTS FLICKER",
+    displayTitle: "Photography & Videography",
+    subtitle: "CAPTURE. CREATE. INSPIRE.",
+    desc: "Capture moments with cinematic vision.",
+    date: "15 Feb 2026",
+    time: "7:00 PM",
+    image: "/assets/Joyce.webp",
   },
-  ];
+];
 
 const EventsSection = () => {
   useEffect(() => {
@@ -353,19 +302,24 @@ const EventsSection = () => {
         <div className="overflow-hidden">
           <h2
             className="
-        heading-line
+       heading-line
 
-        text-white
+      text-white
 
-        text-[clamp(3rem,8vw,8rem)]
+      text-[clamp(2.4rem,10vw,8rem)]
+      sm:text-[clamp(3rem,8vw,8rem)]
 
-        leading-[0.85]
+      leading-[0.95]
 
-        uppercase
+      uppercase
 
-        tracking-[-0.06em]
+      tracking-[-0.03em]
 
-        font-black
+      font-black
+
+      text-center
+
+      break-words
       "
             style={{
               fontFamily:
@@ -381,17 +335,22 @@ const EventsSection = () => {
             className="
         heading-line
 
-        text-white
+      text-white
 
-        text-[clamp(3rem,8vw,8rem)]
+      text-[clamp(2.4rem,10vw,8rem)]
+      sm:text-[clamp(3rem,8vw,8rem)]
 
-        leading-[0.85]
+      leading-[0.95]
 
-        uppercase
+      uppercase
 
-        tracking-[-0.06em]
+      tracking-[-0.03em]
 
-        font-black
+      font-black
+
+      text-center
+
+      break-words
       "
             style={{
               fontFamily:
@@ -540,18 +499,21 @@ const EventsSection = () => {
 
               <h3
                 className="
-                  text-white
+                text-white
 
-                  text-4xl
-                  md:text-5xl
+    text-[2.1rem]
+    sm:text-[2.7rem]
+    md:text-5xl
 
-                  leading-[0.9]
+    leading-[1]
 
-                  uppercase
+    uppercase
 
-                  tracking-[-0.04em]
+    tracking-[-0.02em]
 
-                  font-black
+    font-black
+
+    break-words
                 "
                 style={{
                   fontFamily:

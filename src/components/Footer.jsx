@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 // Update this to your upcoming event date in the future
-const targetDate = new Date("2026-10-10T00:00:00");
+const targetDate = new Date("2026-06-12T00:00:00");
 
 const Footer = () => {
   const [timeLeft, setTimeLeft] = useState({
