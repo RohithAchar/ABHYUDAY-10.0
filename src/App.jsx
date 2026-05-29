@@ -104,6 +104,18 @@ useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  // ================= SCROLL TO EVENTS (from EventDetail back) =================
+
+  useEffect(() => {
+    if (location.state?.scrollToEvents) {
+      requestAnimationFrame(() => {
+        const el = document.querySelector(".events-wrapper");
+        if (el) el.scrollIntoView(true);
+      });
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.pathname]);
+
   // ================= GSAP REFRESH =================
 
   useEffect(() => {
@@ -191,7 +203,7 @@ useEffect(() => {
             path="/"
             element={
               <div>
-                <Hero incrementImagesLoaded={incrementImagesLoaded} />
+                <Hero incrementImagesLoaded={incrementImagesLoaded} skipIntro={location.state?.scrollToEvents} />
                 <EventsSection />
                 <Footer />
               </div>

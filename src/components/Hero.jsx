@@ -4,7 +4,7 @@ import gsap from "gsap";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const Hero = ({ incrementImagesLoaded }) => {
+export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
   const pinContainerRef = useRef(null);
   const heroImageRef = useRef(null);
   const leftTreesRef = useRef(null);
@@ -42,96 +42,111 @@ export const Hero = ({ incrementImagesLoaded }) => {
   ==========================================
   */
 
-    gsap.set([".hero-topline", ".hero-title", ".hero-bottomline"], {
-      yPercent: 100,
-    });
+    let introTl;
 
-    gsap.set(leftTreeWrapperRef.current, {
-      x: -80,
-    });
+    if (!skipIntro) {
+      gsap.set([".hero-topline", ".hero-title", ".hero-bottomline"], {
+        yPercent: 100,
+      });
 
-    gsap.set(rightTreeWrapperRef.current, {
-      x: 80,
-    });
+      gsap.set(leftTreeWrapperRef.current, {
+        x: -80,
+      });
 
-    gsap.set(kidsRef.current, {
-      y: 100,
-    });
+      gsap.set(rightTreeWrapperRef.current, {
+        x: 80,
+      });
 
-    gsap.set(heroImageRef.current, {
-      scale: 1.15,
-      filter: "blur(10px)",
-    });
+      gsap.set(kidsRef.current, {
+        y: 100,
+      });
 
-    const introTl = gsap.timeline({
-      delay: 1,
-    });
+      gsap.set(heroImageRef.current, {
+        scale: 1.15,
+        filter: "blur(10px)",
+      });
 
-    introTl
-      .to(
-        heroImageRef.current,
-        {
-          scale: 1,
-          filter: "blur(0px)",
-          duration: 3,
-          ease: "power4.out",
-        },
-        0,
-      )
-      .to(
-        kidsRef.current,
-        {
-          y: 0,
-          duration: 3,
-          ease: "power4.out",
-        },
-        0,
-      )
-      .to(
-        leftTreeWrapperRef.current,
-        {
-          x: 0,
-          duration: 3,
-          ease: "power4.out",
-        },
-        0,
-      )
-      .to(
-        rightTreeWrapperRef.current,
-        {
-          x: 0,
-          duration: 3,
-          ease: "power4.out",
-        },
-        0,
-      )
-      .to(
-        ".hero-topline",
-        {
-          yPercent: 0,
-          duration: 3,
-          ease: "power4.out",
-        },
-        0,
-      )
-      .to(
-        ".hero-title",
-        {
-          yPercent: 0,
-          duration: 3,
-          ease: "power4.out",
-        },
-        0,
-      )
-      .to(
-        ".hero-bottomline",
-        {
-          yPercent: 0,
-          duration: 3,
-          ease: "power4.out",
-        },
-        0,
-      );
+      introTl = gsap.timeline({
+        delay: 1,
+      });
+
+      introTl
+        .to(
+          heroImageRef.current,
+          {
+            scale: 1,
+            filter: "blur(0px)",
+            duration: 3,
+            ease: "power4.out",
+          },
+          0,
+        )
+        .to(
+          kidsRef.current,
+          {
+            y: 0,
+            duration: 3,
+            ease: "power4.out",
+          },
+          0,
+        )
+        .to(
+          leftTreeWrapperRef.current,
+          {
+            x: 0,
+            duration: 3,
+            ease: "power4.out",
+          },
+          0,
+        )
+        .to(
+          rightTreeWrapperRef.current,
+          {
+            x: 0,
+            duration: 3,
+            ease: "power4.out",
+          },
+          0,
+        )
+        .to(
+          ".hero-topline",
+          {
+            yPercent: 0,
+            duration: 3,
+            ease: "power4.out",
+          },
+          0,
+        )
+        .to(
+          ".hero-title",
+          {
+            yPercent: 0,
+            duration: 3,
+            ease: "power4.out",
+          },
+          0,
+        )
+        .to(
+          ".hero-bottomline",
+          {
+            yPercent: 0,
+            duration: 3,
+            ease: "power4.out",
+          },
+          0,
+        );
+    } else {
+      gsap.set(heroImageRef.current, {
+        scale: 1,
+        filter: "blur(0px)",
+      });
+      gsap.set(kidsRef.current, { y: 0 });
+      gsap.set(leftTreeWrapperRef.current, { x: 0 });
+      gsap.set(rightTreeWrapperRef.current, { x: 0 });
+      gsap.set([".hero-topline", ".hero-title", ".hero-bottomline"], {
+        yPercent: 0,
+      });
+    }
 
     /*
   ==========================================
@@ -370,11 +385,11 @@ export const Hero = ({ incrementImagesLoaded }) => {
       );
 
     return () => {
-      introTl.kill();
+      if (introTl) introTl.kill();
       exitTl.kill();
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
-  }, []);
+  }, [skipIntro]);
 
   return (
     <div>
