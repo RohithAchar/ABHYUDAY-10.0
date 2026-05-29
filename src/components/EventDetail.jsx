@@ -15,6 +15,7 @@ const events = [
   participants: "3-4",
   fees:"600",
   image: "/assets/11.jpg",
+  pos:"20%",
   rules: [
     "Participants: 3–4 members per team",
     "Maximum two teams per college",
@@ -46,7 +47,8 @@ const events = [
   time: "10:00 AM",
   participants: "2-4",
   fees:"600",
-  image: "/assets/Dustin.webp",
+  image: "/assets/Eleven.webp",
+  pos:"30%",
   rules: [
     "Participants: 2–4 members per team",
     "Bring your own laptops and accessories",
@@ -79,6 +81,7 @@ const events = [
   participants: "2",
   fees:"300",
   image: "/assets/Dustin.webp",
+  pos:"70%",
   rules: [
     "Participants: 2 members per team",
     "Bring your own laptops/devices",
@@ -116,6 +119,7 @@ const events = [
   participants: "4",
   fees:"600",
   image: "/assets/Dustin.webp",
+  pos:"20%",
   rules: [
     "Participants: 4 members per team",
     "Tournament consists of 4 rounds",
@@ -148,6 +152,7 @@ const events = [
   participants: "1-2",
   fees:"300",
   image: "/assets/Dustin.webp",
+  pos:"20%",
   rules: [
     "Participants: 1–2 members per team",
     "Quiz consists of 4 rounds",
@@ -182,6 +187,7 @@ const events = [
   participants: "1-3",
   fees:"400",
   image: "/assets/Dustin.webp",
+  pos:"20%",
   rules: [
     "Participants: 1–3 members per team",
     "Maximum 4 teams per college",
@@ -210,6 +216,7 @@ const events = [
   participants: "1-2",
   fees:"300",
   image: "/assets/Dustin.webp",
+  pos:"20%",
   rules: [
     "Participants: 1–2 members per team",
     "Event conducted over 2 days",
@@ -244,6 +251,7 @@ const events = [
   participants: "1-2",
   fees:"300",
   image: "/assets/Dustin.webp",
+  pos:"20%",
   rules: [
     "Participants: 2 members per team",
     "Reel duration must be 60–90 seconds",
@@ -272,6 +280,7 @@ const events = [
   participants: "2-3",
   fees:"400",
   image: "/assets/Dustin.webp",
+  pos:"20%",
   rules: [
     "Participants: 2–3 members per team",
     "Maximum 2 teams per college",
@@ -300,6 +309,7 @@ const events = [
   participants: "2",
   fees:"300",
   image: "/assets/Dustin.webp",
+  pos:"20%",
   rules: [
     "Participants: Solo or up to 2 members",
     "Event has 3 rounds over 2 days",
@@ -418,8 +428,8 @@ export default function EventDetail() {
         <img
           src={event.image}
           alt={event.title}
-          className="w-full h-full object-cover brightness-[0.35] contrast-[1.15] scale-105"
-          style={{ objectPosition: "center 20%" }}
+          className="w-full h-full object-cover brightness-[0.95] contrast-[1.15] scale-105"
+          style={{ objectPosition:`center ${event.pos}` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60" />
