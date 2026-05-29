@@ -296,12 +296,15 @@ const Footer = () => {
 
   <div className="grid grid-cols-2 gap-6">
     {[
-      { name: "Sagar K",     initials: "SK" },
-      { name: "Rohit Achar", initials: "RA" },
+      { name: "Sagar K",      initials: "SK", github: "https://github.com/DKS2424" },
+      { name: "Rohith Achar", initials: "RA", github: "https://github.com/RohithAchar" },
     ].map((dev) => (
-      <div
+      <a
         key={dev.name}
-        className="border border-red-500/15 bg-black/40 px-10 py-7 flex flex-col items-center gap-4"
+        href={dev.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="border border-red-500/15 bg-black/40 px-10 py-7 flex flex-col items-center gap-4 hover:bg-red-500/5 transition-colors duration-300"
       >
         {/* Avatar */}
         <div className="w-24 h-24 rounded-full border border-red-500/40 bg-[#1a0000] flex items-center justify-center">
@@ -316,7 +319,7 @@ const Footer = () => {
         <p className="text-red-500/70 font-mono text-[10px] uppercase tracking-[0.3em] -mt-2 text-center">
           Developer
         </p>
-      </div>
+      </a>
     ))}
   </div>
 </div>

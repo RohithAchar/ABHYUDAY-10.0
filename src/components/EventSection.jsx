@@ -129,20 +129,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const EventsSection = () => {
   useEffect(() => {
-    gsap.utils.toArray(".event-image").forEach((image) => {
-      gsap.to(image, {
-        yPercent: 12,
-
-        ease: "none",
-
-        scrollTrigger: {
-          trigger: image.parentElement,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    });
     gsap.set(".event-card", {
       opacity: 0,
       y: 120,
@@ -166,27 +152,6 @@ const EventsSection = () => {
       },
     });
 
-    gsap.fromTo(
-      ".event-image",
-      {
-        scale: 1.15,
-      },
-      {
-        scale: 1,
-
-        stagger: 0.08,
-
-        duration: 2,
-
-        ease: "power3.out",
-
-        scrollTrigger: {
-          trigger: ".events-wrapper",
-          start: "top 80%",
-        },
-      },
-    );
-
     gsap.set(".heading-line", {
       yPercent: 120,
       clipPath: "inset(0 0 100% 0)",
@@ -206,6 +171,7 @@ const EventsSection = () => {
       scrollTrigger: {
         trigger: ".events-wrapper",
         start: "top 80%",
+        once: true,
       },
     });
 
@@ -226,6 +192,7 @@ const EventsSection = () => {
         scrollTrigger: {
           trigger: ".events-wrapper",
           start: "top 82%",
+          once: true,
         },
       },
     );

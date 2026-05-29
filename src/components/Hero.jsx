@@ -4,7 +4,7 @@ import gsap from "gsap";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const Hero = ({ incrementImagesLoaded }) => {
+export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
   const pinContainerRef = useRef(null);
   const heroImageRef = useRef(null);
   const leftTreesRef = useRef(null);
@@ -14,6 +14,8 @@ export const Hero = ({ incrementImagesLoaded }) => {
   const revealWrapperRef = useRef(null);
   const abWrapperRef = useRef(null);
   const creepyBgRef = useRef(null);
+  const leftTreeWrapperRef = useRef(null);
+  const rightTreeWrapperRef = useRef(null);
 
   // New specific refs to guarantee the fade-out targets the elements perfectly
   const leftHudRef = useRef(null);
@@ -31,64 +33,243 @@ export const Hero = ({ incrementImagesLoaded }) => {
 
   useEffect(() => {
     const container = pinContainerRef.current;
-    const image = heroImageRef.current;
 
-    if (!container || !image) return;
+    if (!container) return;
 
-    // 1. Main pinned section
+    /*
+  ==========================================
+  INTRO
+  ==========================================
+  */
+
+    let introTl;
+
+    if (!skipIntro) {
+      gsap.set([".hero-topline", ".hero-title", ".hero-bottomline"], {
+        yPercent: 100,
+      });
+
+      gsap.set(leftTreeWrapperRef.current, {
+        x: -80,
+      });
+
+      gsap.set(rightTreeWrapperRef.current, {
+        x: 80,
+      });
+
+      gsap.set(kidsRef.current, {
+        y: 100,
+      });
+
+      gsap.set(heroImageRef.current, {
+        scale: 1.15,
+        filter: "blur(10px)",
+      });
+
+      introTl = gsap.timeline({
+        delay: 1,
+      });
+
+      introTl
+        .to(
+          heroImageRef.current,
+          {
+            scale: 1,
+            filter: "blur(0px)",
+            duration: 3,
+            ease: "power4.out",
+          },
+          0,
+        )
+        .to(
+          kidsRef.current,
+          {
+            y: 0,
+            duration: 3,
+            ease: "power4.out",
+          },
+          0,
+        )
+        .to(
+          leftTreeWrapperRef.current,
+          {
+            x: 0,
+            duration: 3,
+            ease: "power4.out",
+          },
+          0,
+        )
+        .to(
+          rightTreeWrapperRef.current,
+          {
+            x: 0,
+            duration: 3,
+            ease: "power4.out",
+          },
+          0,
+        )
+        .to(
+          ".hero-topline",
+          {
+            yPercent: 0,
+            duration: 3,
+            ease: "power4.out",
+          },
+          0,
+        )
+        .to(
+          ".hero-title",
+          {
+            yPercent: 0,
+            duration: 3,
+            ease: "power4.out",
+          },
+          0,
+        )
+        .to(
+          ".hero-bottomline",
+          {
+            yPercent: 0,
+            duration: 3,
+            ease: "power4.out",
+          },
+          0,
+        );
+    } else {
+      gsap.set(heroImageRef.current, {
+        scale: 1,
+        filter: "blur(0px)",
+      });
+      gsap.set(kidsRef.current, { y: 0 });
+      gsap.set(leftTreeWrapperRef.current, { x: 0 });
+      gsap.set(rightTreeWrapperRef.current, { x: 0 });
+      gsap.set([".hero-topline", ".hero-title", ".hero-bottomline"], {
+        yPercent: 0,
+      });
+    }
+
+    /*
+  ==========================================
+  PIN
+  ==========================================
+  */
+
     ScrollTrigger.create({
       trigger: container,
       start: "top top",
       end: "+=5000",
       pin: true,
-      markers: false,
     });
 
-    // 2. Initial entry/scroll parralax animations
-    gsap.to(image, {
+    /*
+  ==========================================
+  OVERWORLD PARALLAX
+  ==========================================
+  */
+
+    gsap.to(heroImageRef.current, {
       scale: 1.15,
       y: -50,
+
+      immediateRender: false,
+
       ease: "none",
-      scrollTrigger: { trigger: container, start: 0, end: 1000, scrub: true },
+
+      scrollTrigger: {
+        trigger: container,
+        start: 1,
+        end: 1000,
+        scrub: true,
+      },
     });
 
     gsap.to(leftTreesRef.current, {
       x: -200,
       y: -50,
       scale: 1.25,
+
+      immediateRender: false,
+
       ease: "none",
-      scrollTrigger: { trigger: container, start: 0, end: 1000, scrub: true },
+
+      scrollTrigger: {
+        trigger: container,
+        start: 1,
+        end: 1000,
+        scrub: true,
+      },
     });
 
     gsap.to(rightTreesRef.current, {
       x: 200,
       y: -50,
       scale: 1.25,
+
+      immediateRender: false,
+
       ease: "none",
-      scrollTrigger: { trigger: container, start: 0, end: 1000, scrub: true },
+
+      scrollTrigger: {
+        trigger: container,
+        start: 1,
+        end: 1000,
+        scrub: true,
+      },
     });
 
     gsap.to(mainTextRef.current, {
       y: -150,
       opacity: 0,
+
+      immediateRender: false,
+
       ease: "none",
-      scrollTrigger: { trigger: container, start: 0, end: 1000, scrub: true },
+
+      scrollTrigger: {
+        trigger: container,
+        start: 1,
+        end: 1000,
+        scrub: true,
+      },
     });
 
     gsap.to(kidsRef.current, {
       y: -150,
       scale: 2,
+
+      immediateRender: false,
+
       ease: "none",
-      scrollTrigger: { trigger: container, start: 0, end: 1000, scrub: true },
+
+      scrollTrigger: {
+        trigger: container,
+        start: 1,
+        end: 1000,
+        scrub: true,
+      },
     });
 
     gsap.to(revealWrapperRef.current, {
       y: "-100vh",
+
+      immediateRender: false,
+
       ease: "none",
-      scrollTrigger: { trigger: container, start: 500, end: 2700, scrub: true },
+
+      scrollTrigger: {
+        trigger: container,
+        start: 500,
+        end: 2700,
+        scrub: true,
+      },
     });
 
-    // Metadata Reveal
+    /*
+  ==========================================
+  ABHYUDAY REVEAL
+  ==========================================
+  */
+
     gsap.set(".metadata-inner", {
       yPercent: 120,
       clipPath: "inset(0 0 100% 0)",
@@ -97,8 +278,15 @@ export const Hero = ({ incrementImagesLoaded }) => {
     gsap.to(".metadata-inner", {
       yPercent: 0,
       clipPath: "inset(0 0 0% 0)",
-      stagger: { each: 0.08 },
+
+      stagger: {
+        each: 0.08,
+      },
+
+      immediateRender: false,
+
       ease: "power4.out",
+
       scrollTrigger: {
         trigger: container,
         start: 1900,
@@ -107,13 +295,19 @@ export const Hero = ({ incrementImagesLoaded }) => {
       },
     });
 
-    // Letters animation
     const letterOffsets = [-10, 25, -18, 12, -30, 18, -15, 28];
-    gsap.set(".ab-letter", { yPercent: (i) => letterOffsets[i] });
+
+    gsap.set(".ab-letter", {
+      yPercent: (i) => letterOffsets[i],
+    });
 
     gsap.to(".ab-letter", {
       yPercent: 0,
+
+      immediateRender: false,
+
       ease: "none",
+
       scrollTrigger: {
         trigger: container,
         start: 1700,
@@ -122,15 +316,25 @@ export const Hero = ({ incrementImagesLoaded }) => {
       },
     });
 
-    // Creepy Background clip mask reveal
+    /*
+  ==========================================
+  UPSIDE DOWN REVEAL
+  ==========================================
+  */
+
     gsap.set(creepyBgRef.current, {
       clipPath: "inset(100% 0 0 0)",
       yPercent: 8,
     });
+
     gsap.to(creepyBgRef.current, {
       clipPath: "inset(0% 0 0 0)",
       yPercent: 0,
+
+      immediateRender: false,
+
       ease: "none",
+
       scrollTrigger: {
         trigger: container,
         start: 1800,
@@ -139,81 +343,53 @@ export const Hero = ({ incrementImagesLoaded }) => {
       },
     });
 
-    // --- THE TOTAL BLACKOUT SYSTEM ---
-    // Targets refs explicitly so class refactors can't break the animation timeline
-    const terminalExitTimeline = gsap.timeline({
+    /*
+  ==========================================
+  EXIT
+  ==========================================
+  */
+
+    const exitTl = gsap.timeline({
       scrollTrigger: {
         trigger: container,
-        start: "3500",
-        end: "4800",
+        start: 3500,
+        end: 4800,
         scrub: true,
       },
     });
 
-    terminalExitTimeline
-      // 1. Instantly clear main central content wrapper out of frame view
+    exitTl
       .to(
         abWrapperRef.current,
         {
           scale: 0.9,
           opacity: 0,
           yPercent: -10,
-          ease: "power2.in",
         },
         0,
       )
-
-      // 2. Pull the side HUD grids up/away and drop opacity to 0
       .to(
         [leftHudRef.current, rightHudRef.current],
         {
           y: -50,
           opacity: 0,
-          ease: "power2.in",
         },
         0,
       )
-
-      // 3. Make the red center core flare out dynamically like an imploding tube monitor
-      // .to(
-      //   redGlowRef.current,
-      //   {
-      //     scale: 1.4,
-      //     opacity: 0.4,
-      //     backgroundColor: "rgba(220, 38, 38, 0.4)",
-      //     ease: "power1.out",
-      //   },
-      //   0,
-      // )
-
-      // 4. Force collapse the environmental elements to zero
       .to(
         [redGlowRef.current, creepyBgRef.current],
         {
           opacity: 0,
-          ease: "power3.in",
         },
         0,
-      )
-
-      // 5. Hard hide everything from layout at the absolute end to avoid pointer ghosts
-      .set(
-        [
-          abWrapperRef.current,
-          leftHudRef.current,
-          rightHudRef.current,
-          redGlowRef.current,
-          creepyBgRef.current,
-        ],
-        {
-          display: "none",
-        },
       );
 
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      if (introTl) introTl.kill();
+      exitTl.kill();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
-  }, []);
+  }, [skipIntro]);
 
   return (
     <div>
@@ -246,53 +422,97 @@ export const Hero = ({ incrementImagesLoaded }) => {
             }}
           />
 
-          <img
-            onLoad={() => incrementImagesLoaded()}
-            ref={leftTreesRef}
-            src="/trees-left.png"
-            alt=""
+          <div
+            ref={leftTreeWrapperRef}
             style={{
               position: "absolute",
               top: 0,
               height: "100%",
               width: "auto",
-              maxWidth: "none",
               zIndex: 2,
             }}
-            className="ml-[-650px] sm:ml-[-700px] md:ml-[-650px] lg:ml-[-600px] xl:ml-[-500px] 2xl:ml-[-350px]"
-          />
+            className="
+    ml-[-650px]
+    sm:ml-[-700px]
+    md:ml-[-650px]
+    lg:ml-[-600px]
+    xl:ml-[-500px]
+    2xl:ml-[-350px]
+  "
+          >
+            <img
+              ref={leftTreesRef}
+              src="/trees-left.png"
+              onLoad={() => incrementImagesLoaded()}
+              alt=""
+              style={{
+                height: "100%",
+                width: "auto",
+                maxWidth: "none",
+              }}
+            />
+          </div>
 
-          <img
-            onLoad={() => incrementImagesLoaded()}
-            ref={rightTreesRef}
-            src="/trees-right.png"
-            alt=""
+          <div
+            ref={rightTreeWrapperRef}
             style={{
               position: "absolute",
               top: 0,
               right: 0,
               height: "100%",
               width: "auto",
-              maxWidth: "none",
               zIndex: 2,
             }}
-            className="mr-[-650px] sm:mr-[-700px] md:mr-[-650px] lg:mr-[-600px] xl:mr-[-500px] 2xl:mr-[-350px]"
-          />
+            className="
+    mr-[-650px]
+    sm:mr-[-700px]
+    md:mr-[-650px]
+    lg:mr-[-600px]
+    xl:mr-[-500px]
+    2xl:mr-[-350px]
+  "
+          >
+            <img
+              ref={rightTreesRef}
+              src="/trees-right.png"
+              onLoad={() => incrementImagesLoaded()}
+              alt=""
+              style={{
+                height: "100%",
+                width: "auto",
+                maxWidth: "none",
+              }}
+            />
+          </div>
 
           <div
             ref={mainTextRef}
             className="absolute top-[10%] w-full text-center text-white px-4"
             style={{ zIndex: 3 }}
           >
-            <p className="tracking-[0.25em] text-sm md:text-base">
-              THE UPSIDE DOWN  
-            </p>
-            <h1 className="font-bold leading-none mt-2 text-[clamp(2.25rem,5vw,4rem)]">
-              JUST WENT <span>ONLINE</span>
-            </h1>
-            <p className="tracking-[0.25em] mt-2 text-sm md:text-base">
-              MCA, MSRIT PRESENTS
-            </p>
+            <div className="overflow-hidden">
+              <p className="hero-topline text-white uppercase tracking-[0.5em] text-[10px] md:text-xs font-mono">
+                THE UPSIDE DOWN
+              </p>
+            </div>
+
+            <div className="overflow-hidden mt-2">
+              <h1
+                className="hero-title text-white text-[clamp(2.4rem,10vw,8rem)] sm:text-[clamp(3rem,8vw,8rem)] leading-[0.95] uppercase tracking-[-0.03em] font-black text-center"
+                style={{
+                  fontFamily:
+                    'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
+                }}
+              >
+                JUST WENT <span>ONLINE</span>
+              </h1>
+            </div>
+
+            <div className="overflow-hidden mt-2">
+              <p className="hero-bottomline text-white uppercase tracking-[0.5em] text-[10px] md:text-xs font-mono">
+                MCA, MSRIT PRESENTS
+              </p>
+            </div>
           </div>
 
           <img

@@ -324,14 +324,7 @@ export default function EventDetail() {
   const event = events.find((e) => e.slug === slug);
 
  const handleBack = () => {
-  navigate("/");
-
-  setTimeout(() => {
-    const eventsSection = document.querySelector(".events-wrapper");
-    if (eventsSection) {
-      eventsSection.scrollIntoView({ behavior: "smooth" });
-    }
-  }, 100);
+  navigate("/", { state: { scrollToEvents: true } });
 };
 
   const heroRef = useRef(null);
