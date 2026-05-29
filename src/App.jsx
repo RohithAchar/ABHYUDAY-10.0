@@ -25,21 +25,53 @@ import EventDetail from "./components/EventDetail";  // ← make sure this path 
 
 gsap.registerPlugin(ScrollTrigger);
 
+const bgAudio = new Audio("/stranger_things.mp3");
+bgAudio.loop = true;
+bgAudio.volume = 1;
+bgAudio.muted = true; // ← start muted
+
 // const totalImages = 5;
-const totalImages = location.pathname === "/" ? 5 : 0;
 
 function App() {
   const [numOfImagesLoaded, setNumOfImagesLoaded] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [isScrolling, setIsScrolling] = useState(false);
 
+  const [muted, setMuted] = useState(true);
   const sectionRef = useRef(null);
   const location = useLocation();
+  const totalImages = location.pathname === "/" ? 5 : 0;
 
   const progress = (numOfImagesLoaded / totalImages) * 100;
   const incrementImagesLoaded = () => {
   setNumOfImagesLoaded((prev) => prev + 1);
 };
+
+const toggleMute = () => {
+  if (bgAudio.muted) {
+    bgAudio.muted = false;
+    bgAudio.play().catch(() => {});
+  } else {
+    bgAudio.muted = true;
+  }
+  setMuted(!muted);
+};
+
+useEffect(() => {
+  const unlock = () => {
+    bgAudio.play().catch(() => {});
+    document.removeEventListener("click", unlock);
+    document.removeEventListener("touchstart", unlock);
+  };
+
+  // Try immediately
+  bgAudio.play().catch(() => {
+    // Wait for first click/touch
+    document.addEventListener("click", unlock);
+    document.addEventListener("touchstart", unlock);
+  });
+}, []);
+
 
   // ================= IMAGE LOADER =================
 
@@ -174,6 +206,7 @@ function App() {
       {/* LOADER OVERLAY */}
       {isLoading && (
         <div
+        onClick={() => bgAudio.play().catch(() => {})}
           className="
             fixed inset-0 z-[9999]
             flex flex-col items-center justify-center
@@ -199,6 +232,48 @@ function App() {
           </p>
         </div>
       )}
+
+
+
+      {/* Audio */}
+{/* <audio
+  ref={audioRef}
+  loop
+  onPlay={() => console.log("✅ Audio playing")}
+  onError={(e) => console.log("❌ Audio error", e)}
+  onCanPlay={() => console.log("✅ Audio can play")}
+>
+  <source src="/stranger_things.mp3" type="audio/mpeg" />
+</audio> */}
+
+{/* Mute button — always visible */}
+<button
+  onClick={toggleMute}
+  className="
+    fixed bottom-6 right-6 z-[9999]
+    border border-red-500/40
+    bg-black
+    w-11 h-11
+    flex items-center justify-center
+    text-red-500
+    hover:bg-red-500/10
+    transition-all duration-300
+  "
+>
+  {muted ? (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <line x1="23" y1="9" x2="17" y2="15"/>
+      <line x1="17" y1="9" x2="23" y2="15"/>
+    </svg>
+  ) : (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+    </svg>
+  )}
+</button>
     </>
   );
 }

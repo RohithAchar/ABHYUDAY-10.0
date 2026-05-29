@@ -287,6 +287,44 @@ const Footer = () => {
         {/* Divider */}
         <div className="h-px w-full bg-red-500/10 my-10 md:my-14" />
 
+{/* Developers Section */}
+{/* Developers Section */}
+<div className="mt-14 flex flex-col items-center text-center">
+  <p className="text-red-500 uppercase tracking-[0.35em] text-[10px] font-mono mb-6">
+    Built By
+  </p>
+
+  <div className="grid grid-cols-2 gap-6">
+    {[
+      { name: "Sagar K",     initials: "SK" },
+      { name: "Rohit Achar", initials: "RA" },
+    ].map((dev) => (
+      <div
+        key={dev.name}
+        className="border border-red-500/15 bg-black/40 px-10 py-7 flex flex-col items-center gap-4"
+      >
+        {/* Avatar */}
+        <div className="w-24 h-24 rounded-full border border-red-500/40 bg-[#1a0000] flex items-center justify-center">
+          <span className="text-red-400 font-mono font-bold text-lg tracking-wider">
+            {dev.initials}
+          </span>
+        </div>
+
+        <p className="text-white font-mono text-sm tracking-[0.08em] text-center">
+          {dev.name}
+        </p>
+        <p className="text-red-500/70 font-mono text-[10px] uppercase tracking-[0.3em] -mt-2 text-center">
+          Developer
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+
+
+
         {/* Bottom */}
         <div
           className="
@@ -297,6 +335,7 @@ const Footer = () => {
             md:items-center
             justify-between
             gap-6
+            mt-10
           "
         >
           <div>
@@ -348,6 +387,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      
     </footer>
   );
 };
