@@ -55,8 +55,7 @@ export const Hero = ({ incrementImagesLoaded }) => {
     });
 
     gsap.set(kidsRef.current, {
-      scale: 2,
-      y: -100,
+      y: 100,
     });
 
     gsap.set(heroImageRef.current, {
@@ -82,7 +81,6 @@ export const Hero = ({ incrementImagesLoaded }) => {
       .to(
         kidsRef.current,
         {
-          scale: 1,
           y: 0,
           duration: 3,
           ease: "power4.out",
