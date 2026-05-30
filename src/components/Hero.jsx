@@ -157,7 +157,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
     ScrollTrigger.create({
       trigger: container,
       start: "top top",
-      end: "+=5000",
+      end: "+=4500",
       pin: true,
     });
 
@@ -353,7 +353,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
       scrollTrigger: {
         trigger: container,
         start: 3500,
-        end: 4800,
+        end: 4500,
         scrub: true,
       },
     });
