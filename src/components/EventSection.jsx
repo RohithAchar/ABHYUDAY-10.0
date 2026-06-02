@@ -63,7 +63,7 @@ gsap.registerPlugin(ScrollTrigger);
     desc: "Challenge your technical knowledge.",
     date: "15 Feb 2026",
     time: "2:00 PM",
-    image: "/assets/Hopper.webp",
+    image: "/assets/Dustin.jpeg",
   },
 
   {
@@ -87,7 +87,7 @@ gsap.registerPlugin(ScrollTrigger);
     desc: "Compete in intense coding battles.",
     date: "15 Feb 2026",
     time: "4:00 PM",
-    image: "/assets/Steve.webp",
+    image: "/assets/Codered.jpeg",
   },
 
   {
@@ -111,7 +111,7 @@ gsap.registerPlugin(ScrollTrigger);
     desc: "Decode puzzles and unlock mysteries.",
     date: "15 Feb 2026",
     time: "6:00 PM",
-    image: "/assets/Steve.webp",
+    image: "/assets/Russian.jpeg",
   },
 
   {
