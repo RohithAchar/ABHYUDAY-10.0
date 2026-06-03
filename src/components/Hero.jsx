@@ -17,12 +17,12 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
   const leftTreeWrapperRef = useRef(null);
   const rightTreeWrapperRef = useRef(null);
 
-  // New specific refs to guarantee the fade-out targets the elements perfectly
   const leftHudRef = useRef(null);
   const rightHudRef = useRef(null);
-  const redGlowRef = useRef(null);
+  // const redGlowRef = useRef(null);
 
   const [isMobile, setIsMobile] = useState(false);
+  const [imagesReady, setImagesReady] = useState(false);
 
   useEffect(() => {
     setIsMobile(window.innerWidth <= 768);
@@ -31,10 +31,35 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Track image loading and defer GSAP setup
+  useEffect(() => {
+    const img = heroImageRef.current;
+    if (!img) return;
+
+    const onLoad = () => {
+      // Defer GSAP setup until next frame after image loads
+      requestAnimationFrame(() => {
+        setImagesReady(true);
+      });
+    };
+
+    // If image is already loaded (cached), set immediately
+    if (img.complete) {
+      onLoad();
+    } else {
+      img.addEventListener("load", onLoad);
+      img.addEventListener("error", onLoad); // Set ready even on error
+      return () => {
+        img.removeEventListener("load", onLoad);
+        img.removeEventListener("error", onLoad);
+      };
+    }
+  }, []);
+
   useEffect(() => {
     const container = pinContainerRef.current;
 
-    if (!container) return;
+    if (!container || !imagesReady) return;
 
     /*
   ==========================================
@@ -63,7 +88,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
 
       gsap.set(heroImageRef.current, {
         scale: 1.15,
-        filter: "blur(10px)",
+        filter: "blur(0px)",
       });
 
       introTl = gsap.timeline({
@@ -157,7 +182,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
     ScrollTrigger.create({
       trigger: container,
       start: "top top",
-      end: "+=4500",
+      end: "+=5000",
       pin: true,
     });
 
@@ -168,7 +193,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
   */
 
     gsap.to(heroImageRef.current, {
-      scale: 1.15,
+      scale: 1.3,
       y: -50,
 
       immediateRender: false,
@@ -179,14 +204,14 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
         trigger: container,
         start: 1,
         end: 1000,
-        scrub: true,
+        scrub: 0.8,
       },
     });
 
     gsap.to(leftTreesRef.current, {
-      x: -200,
+      x: -500,
       y: -50,
-      scale: 1.25,
+      scale: 1.45,
 
       immediateRender: false,
 
@@ -196,14 +221,14 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
         trigger: container,
         start: 1,
         end: 1000,
-        scrub: true,
+        scrub: 0.8,
       },
     });
 
     gsap.to(rightTreesRef.current, {
-      x: 200,
+      x: 500,
       y: -50,
-      scale: 1.25,
+      scale: 1.45,
 
       immediateRender: false,
 
@@ -213,12 +238,12 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
         trigger: container,
         start: 1,
         end: 1000,
-        scrub: true,
+        scrub: 0.8,
       },
     });
 
     gsap.to(mainTextRef.current, {
-      y: -150,
+      y: -350,
       opacity: 0,
 
       immediateRender: false,
@@ -229,7 +254,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
         trigger: container,
         start: 1,
         end: 1000,
-        scrub: true,
+        scrub: 0.8,
       },
     });
 
@@ -245,7 +270,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
         trigger: container,
         start: 1,
         end: 1000,
-        scrub: true,
+        scrub: 0.8,
       },
     });
 
@@ -260,7 +285,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
         trigger: container,
         start: 500,
         end: 2700,
-        scrub: true,
+        scrub: 0.8,
       },
     });
 
@@ -291,27 +316,101 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
         trigger: container,
         start: 1900,
         end: 2800,
+        scrub: 0.8,
+      },
+    });
+
+    gsap.set(".ab-letter", {
+      y: "-60%",
+      opacity: 0,
+    });
+
+    gsap.to(".ab-letter", {
+      y: "0%",
+      opacity: 1,
+
+      stagger: {
+        each: 0.08,
+      },
+
+      ease: "power4.out",
+
+      scrollTrigger: {
+        trigger: container,
+        start: 1800,
+        end: 3200,
         scrub: true,
       },
     });
 
-    const letterOffsets = [-10, 25, -18, 12, -30, 18, -15, 28];
-
-    gsap.set(".ab-letter", {
-      yPercent: (i) => letterOffsets[i],
+    // "ENTER THE UNKNOWN" eyebrow reveals just before the letters
+    gsap.set(".ab-eyebrow > span", {
+      yPercent: 120,
     });
 
-    gsap.to(".ab-letter", {
+    gsap.to(".ab-eyebrow > span", {
       yPercent: 0,
 
-      immediateRender: false,
-
-      ease: "none",
+      ease: "power4.out",
 
       scrollTrigger: {
         trigger: container,
-        start: 1700,
-        end: 2500,
+        start: 1500,
+        end: 2200,
+        scrub: true,
+      },
+    });
+
+    // Signal bar wipes in from left, right after the letters settle
+    gsap.set(".ab-signal", {
+      scaleX: 0,
+      transformOrigin: "left center",
+    });
+
+    gsap.to(".ab-signal", {
+      scaleX: 1,
+
+      ease: "power2.out",
+
+      scrollTrigger: {
+        trigger: container,
+        start: 2300,
+        end: 2900,
+        scrub: true,
+      },
+    });
+
+    // "10.0" version label reveals
+    gsap.set(".ab-version > span", {
+      yPercent: 120,
+    });
+
+    gsap.to(".ab-version > span", {
+      yPercent: 0,
+
+      ease: "power4.out",
+
+      scrollTrigger: {
+        trigger: container,
+        start: 2800,
+        end: 3300,
+        scrub: true,
+      },
+    });
+
+    // CTA button fades up at the end of the section
+    gsap.set(".ab-cta", {
+      opacity: 0,
+    });
+
+    gsap.to(".ab-cta", {
+      opacity: 1,
+      yPercent: 0,
+
+      scrollTrigger: {
+        trigger: container,
+        start: 2500,
+        end: 3000,
         scrub: true,
       },
     });
@@ -323,13 +422,15 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
   */
 
     gsap.set(creepyBgRef.current, {
-      clipPath: "inset(100% 0 0 0)",
-      yPercent: 8,
+      // clipPath: "inset(100% 0 0 0)",
+      // yPercent: 8,
+      filter: "brightness(0) contrast(1)",
     });
 
     gsap.to(creepyBgRef.current, {
-      clipPath: "inset(0% 0 0 0)",
-      yPercent: 0,
+      // clipPath: "inset(0% 0 0 0)",
+      // yPercent: 0,
+      filter: "brightness(1) contrast(1)",
 
       immediateRender: false,
 
@@ -337,9 +438,9 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
 
       scrollTrigger: {
         trigger: container,
-        start: 1800,
-        end: 3200,
-        scrub: true,
+        start: 1200,
+        end: 2500,
+        scrub: 0.8,
       },
     });
 
@@ -352,9 +453,9 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
     const exitTl = gsap.timeline({
       scrollTrigger: {
         trigger: container,
-        start: 3500,
-        end: 4500,
-        scrub: true,
+        start: 4000,
+        end: 5000,
+        scrub: 0.8,
       },
     });
 
@@ -377,19 +478,27 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
         0,
       )
       .to(
-        [redGlowRef.current, creepyBgRef.current],
+        creepyBgRef.current,
         {
+          yPercent: 0,
           opacity: 0,
         },
         0,
       );
+    // .to(
+    //   [redGlowRef.current, creepyBgRef.current],
+    //   {
+    //     opacity: 0,
+    //   },
+    //   0,
+    // );
 
     return () => {
       if (introTl) introTl.kill();
       exitTl.kill();
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
-  }, [skipIntro]);
+  }, [skipIntro, imagesReady]);
 
   return (
     <div>
@@ -510,7 +619,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
 
             <div className="overflow-hidden mt-2">
               <p className="hero-bottomline text-white uppercase tracking-[0.5em] text-[10px] md:text-xs font-mono">
-                MCA, MSRIT PRESENTS
+                MCA, RIT PRESENTS
               </p>
             </div>
           </div>
@@ -530,16 +639,22 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
           className="absolute inset-0 overflow-hidden bg-black"
           style={{ zIndex: 0 }}
         >
-          <img
-            onLoad={() => incrementImagesLoaded()}
+          <div
             ref={creepyBgRef}
-            src="/creepy-background.jpg"
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover brightness-[1.2] contrast-[1]"
+            className="absolute inset-0 w-full h-full"
+            style={{
+              background: `
+                radial-gradient(circle at 0% 0%, rgba(220, 38, 38, 0.55) 0%, transparent 45%),
+                radial-gradient(circle at 100% 0%, rgba(185, 28, 28, 0.55) 0%, transparent 45%),
+                radial-gradient(circle at 0% 100%, rgba(185, 28, 28, 0.55) 0%, transparent 45%),
+                radial-gradient(circle at 100% 100%, rgba(220, 38, 38, 0.55) 0%, transparent 45%),
+                #000000
+              `,
+            }}
           />
 
           {/* Red atmospheric glow */}
-          <div className="absolute inset-0 z-[2] pointer-events-none">
+          {/* <div className="absolute inset-0 z-[2] pointer-events-none">
             <div
               ref={redGlowRef}
               className="
@@ -551,7 +666,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
                 blur-[70px] md:blur-[140px]
               "
             />
-          </div>
+          </div> */}
 
           {/* Scanlines layer */}
           <div className="scanlines absolute inset-0 z-[3] pointer-events-none opacity-60 md:opacity-100" />
@@ -570,7 +685,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
               LIVE
             </div>
             <p>Tech Fest 10.0</p>
-            <p className="mt-1">MSRIT Network [LIVE]</p>
+            <p className="mt-1">RIT Network [LIVE]</p>
             <p className="mt-1 text-red-300 break-words">
               Feed: ABHYUDAY_SIGNAL
             </p>
@@ -609,12 +724,13 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
     flex-col
     items-center
     max-h-screen
-    overflow-y-auto
     md:overflow-visible
   "
           >
-            <p className="mt-12 md:mt-0 text-red-500 uppercase tracking-[0.22em] md:tracking-[0.5em] text-[9px] md:text-sm mb-3 md:mb-6 font-mono">
-              ENTER THE UNKNOWN
+            <p className="ab-eyebrow overflow-hidden">
+              <span className="mt-24 md:mt-0 text-red-500 uppercase tracking-[0.22em] md:tracking-[0.5em] text-[9px] md:text-sm mb-3 md:mb-6 font-mono block">
+                ENTER THE UNKNOWN
+              </span>
             </p>
 
             <h1
@@ -633,13 +749,15 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
 
             {/* Oscilloscope/Signal Bar */}
             <div className="mt-3 md:mt-6 flex justify-center w-full">
-              <div className="w-[88vw] md:w-[70vw] max-w-[900px] h-[1px] bg-red-500 relative overflow-hidden">
+              <div className="ab-signal w-[88vw] md:w-[70vw] max-w-[900px] h-[1px] bg-red-500 relative overflow-hidden">
                 <div className="absolute inset-0 waveform" />
               </div>
             </div>
 
-            <p className="mt-3 md:mt-5 text-red-500 uppercase tracking-[0.22em] md:tracking-[0.4em] text-[9px] md:text-sm font-mono">
-              10.0
+            <p className="ab-version overflow-hidden">
+              <span className="mt-3 md:mt-5 text-red-500 uppercase tracking-[0.22em] md:tracking-[0.4em] text-[9px] md:text-sm font-mono block">
+                10.0
+              </span>
             </p>
 
             {/* Metadata Cluster wrapper */}
@@ -647,11 +765,11 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
               {/* Mobile View matrix */}
               <div className="flex flex-col gap-3 md:hidden">
                 {[
-                  { label: "LOCATION", value: "MSRIT CAMPUS" },
+                  { label: "LOCATION", value: "RIT CAMPUS" },
                   { label: "TRANSMISSION", value: "ACTIVE" },
                   { label: "STATUS", value: "OPEN" },
                   { label: "DATE", value: "June 12 2026" },
-                  { label: "CHANNEL", value: "v1.0" },
+                  // { label: "CHANNEL", value: "v1.0" },
                 ].map((item, index) => (
                   <div
                     key={index}
@@ -671,13 +789,13 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
               </div>
 
               {/* Desktop View grid */}
-              <div className="hidden md:grid grid-cols-5 gap-6 text-left font-mono">
+              <div className="hidden md:grid grid-cols-4 gap-6 text-left font-mono">
                 {[
-                  { label: "Location", value: "MSRIT CAMPUS" },
+                  { label: "Location", value: "RIT CAMPUS" },
                   { label: "Transmission", value: "ACTIVE" },
                   { label: "Status", value: "OPEN" },
                   { label: "Date", value: "JUNE 12 2026" },
-                  { label: "Channel", value: "v1.0" },
+                  // { label: "Channel", value: "v1.0" },
                 ].map((item, index) => (
                   <div key={index} className="metadata-item overflow-hidden">
                     <div className="metadata-inner">
@@ -695,7 +813,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
             </div>
 
             {/* Interactive CTA */}
-            <button className="mt-5 md:mt-14 border border-red-500 px-8 md:px-12 py-3 md:py-4 text-red-500 uppercase tracking-[0.24em] md:tracking-[0.4em] font-mono text-[10px] md:text-sm hover:bg-red-500 hover:text-black transition-all duration-300">
+            <button className="ab-cta mt-5 md:mt-14 border border-red-500 px-8 md:px-12 py-3 md:py-4 text-red-500 uppercase tracking-[0.24em] md:tracking-[0.4em] font-mono text-[10px] md:text-sm hover:bg-red-500 hover:text-black transition-all duration-300">
               ENTER EXPERIENCE
             </button>
           </div>

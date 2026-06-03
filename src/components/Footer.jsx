@@ -134,14 +134,14 @@ const Footer = () => {
               className="
                 mt-5
                 max-w-md
-                text-sm
-                md:text-base
+                text-base
+                md:text-lg
                 text-white/60
                 leading-relaxed
               "
             >
               Enter the upside down.
-              <br />A cinematic technical experience at MCA, MSRIT.
+              <br />A cinematic technical experience at MCA, RIT.
             </p>
             <br></br>
             <p
@@ -156,15 +156,11 @@ const Footer = () => {
             >
               Faculty Coordinator
             </p>
-      
-            <p className="text-sm md:text-base text-white/50">
-              
-            </p>
-            <p className="text-sm md:text-base text-white/50">
-              Ms. Sahana :
-            </p>
-            <p className="text-sm md:text-base text-white/50">
-              Dr. Evangalin Geetha : 
+
+            <p className="text-base md:text-lg text-white/50"></p>
+
+            <p className="text-base md:text-lg text-white/50">
+              Dr. Evangalin Geetha :
             </p>
             <p
               className="
@@ -180,14 +176,12 @@ const Footer = () => {
               Student Coordinator
             </p>
 
-              
-            <p className="text-sm md:text-base text-white/50">
-             Khusal : +91 8217621915
+            <p className="text-base md:text-lg text-white/50">
+              Khusal : +91 8217621915
             </p>
-            <p className="text-sm md:text-base text-white/50">
-            Shravya : +91 8762723575
+            <p className="text-base md:text-lg text-white/50">
+              Shravya : +91 8762723575
             </p>
-
           </div>
 
           {/* Countdown */}
@@ -287,46 +281,50 @@ const Footer = () => {
         {/* Divider */}
         <div className="h-px w-full bg-red-500/10 my-10 md:my-14" />
 
-{/* Developers Section */}
-{/* Developers Section */}
-<div className="mt-14 flex flex-col items-center text-center">
-  <p className="text-red-500 uppercase tracking-[0.35em] text-[10px] font-mono mb-6">
-    Built By
-  </p>
+        {/* Developers Section */}
+        {/* Developers Section */}
+        <div className="mt-14 flex flex-col items-center text-center">
+          <p className="text-red-500 uppercase tracking-[0.35em] text-[10px] font-mono mb-6">
+            Built By
+          </p>
 
-  <div className="grid grid-cols-2 gap-6">
-    {[
-      { name: "Sagar K",      initials: "SK", github: "https://github.com/DKS2424" },
-      { name: "Rohith Achar", initials: "RA", github: "https://github.com/RohithAchar" },
-    ].map((dev) => (
-      <a
-        key={dev.name}
-        href={dev.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="border border-red-500/15 bg-black/40 px-10 py-7 flex flex-col items-center gap-4 hover:bg-red-500/5 transition-colors duration-300"
-      >
-        {/* Avatar */}
-        <div className="w-24 h-24 rounded-full border border-red-500/40 bg-[#1a0000] flex items-center justify-center">
-          <span className="text-red-400 font-mono font-bold text-lg tracking-wider">
-            {dev.initials}
-          </span>
+          <div className="grid grid-cols-2 gap-6">
+            {[
+              {
+                name: "Sagar K",
+                initials: "SK",
+                github: "https://github.com/DKS2424",
+              },
+              {
+                name: "Rohith Achar",
+                initials: "RA",
+                github: "https://github.com/RohithAchar",
+              },
+            ].map((dev) => (
+              <a
+                key={dev.name}
+                href={dev.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-red-500/15 bg-black/40 px-10 py-7 flex flex-col items-center gap-4 hover:bg-red-500/5 transition-colors duration-300"
+              >
+                {/* Avatar */}
+                <div className="w-24 h-24 rounded-full border border-red-500/40 bg-[#1a0000] flex items-center justify-center">
+                  <span className="text-red-400 font-mono font-bold text-xl tracking-wider">
+                    {dev.initials}
+                  </span>
+                </div>
+
+                <p className="text-white font-mono text-base tracking-[0.08em] text-center">
+                  {dev.name}
+                </p>
+                <p className="text-red-500/70 font-mono text-[10px] uppercase tracking-[0.3em] -mt-2 text-center">
+                  Developer
+                </p>
+              </a>
+            ))}
+          </div>
         </div>
-
-        <p className="text-white font-mono text-sm tracking-[0.08em] text-center">
-          {dev.name}
-        </p>
-        <p className="text-red-500/70 font-mono text-[10px] uppercase tracking-[0.3em] -mt-2 text-center">
-          Developer
-        </p>
-      </a>
-    ))}
-  </div>
-</div>
-
-
-
-
 
         {/* Bottom */}
         <div
@@ -352,10 +350,10 @@ const Footer = () => {
                 mb-2
               "
             >
-              MCA, MSRIT
+              MCA, RIT
             </p>
 
-            <p className="text-sm md:text-base text-white/50">
+            <p className="text-base md:text-lg text-white/50">
               Signal frequency: 88.6 MHz
             </p>
           </div>
@@ -364,8 +362,8 @@ const Footer = () => {
             <p
               className="
                 text-white/40
-                text-xs
-                md:text-sm
+                text-sm
+                md:text-base
                 uppercase
                 tracking-[0.25em]
                 font-mono
@@ -378,20 +376,18 @@ const Footer = () => {
               className="
                 mt-2
                 text-white/30
-                text-[10px]
-                md:text-xs
+                text-xs
+                md:text-sm
                 tracking-[0.2em]
                 uppercase
                 font-mono
               "
             >
-              MSRIT Network [LIVE]
+              RIT Network [LIVE]
             </p>
           </div>
         </div>
       </div>
-
-      
     </footer>
   );
 };

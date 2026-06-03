@@ -1,46 +1,20 @@
 import { useEffect, useRef } from "react";
 
-const COLORS = ["#ff2200", "#ff6600", "#ff0044", "#cc0000", "#ff0044"];
-
 export function ChristmasLights({ active }) {
-  const bulbRefs = useRef([]);
-  const timeoutRef = useRef(null);
+  const bulbContainerRef = useRef(null);
 
   useEffect(() => {
-    function flicker() {
-      bulbRefs.current.forEach((b, i) => {
-        if (!b) return;
+    if (!bulbContainerRef.current) return;
 
-        const on = Math.random() > 0.3;
-        const color = COLORS[i % COLORS.length];
+    const bulbs = bulbContainerRef.current.querySelectorAll(".bulb");
 
-        b.style.background = on ? color : "#333";
-        b.style.boxShadow = on ? `0 0 8px 2px ${color}` : "none";
-        b.style.borderColor = on ? color : "#444";
-      });
-
-      timeoutRef.current = setTimeout(
-        flicker,
-        60 + Math.random() * 100
-      );
-    }
-
-    if (active) {
-      flicker();
-    } else {
-      clearTimeout(timeoutRef.current);
-
-      bulbRefs.current.forEach((b) => {
-        if (!b) return;
-        b.style.background = "#333";
-        b.style.boxShadow = "none";
-        b.style.borderColor = "#444";
-      });
-    }
-
-    return () => {
-      clearTimeout(timeoutRef.current);
-    };
+    bulbs.forEach((bulb) => {
+      if (active) {
+        bulb.classList.remove("inactive");
+      } else {
+        bulb.classList.add("inactive");
+      }
+    });
   }, [active]);
 
   return (
@@ -56,16 +30,16 @@ export function ChristmasLights({ active }) {
         zIndex: 9999,
         justifyContent: "center",
       }}
+      ref={bulbContainerRef}
     >
       {Array.from({ length: 16 }).map((_, i) => (
         <div key={i} style={{ display: "flex", alignItems: "center" }}>
           <div
-            ref={(el) => (bulbRefs.current[i] = el)}
+            className="bulb"
             style={{
               width: 14,
               height: 14,
               borderRadius: "50%",
-              background: "#333",
               border: "1.5px solid #444",
             }}
           />

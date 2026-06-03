@@ -100,13 +100,7 @@ body {
   animation: pulse 1.2s infinite;
 }
 
-.creepy-bg {
-  will-change: transform, clip-path;
-
-  transform: translateZ(0);
-
-  backface-visibility: hidden;
-}
+/* creepy-bg class removed: replaced with inline red corner gradient in Hero.jsx */
 
 /* ---------- SUBTLE GRID ---------- */
 
@@ -212,6 +206,202 @@ img,
   transform: translateZ(0);
 }
 
+/* ---------- CHRISTMAS LIGHTS ---------- */
+
+@keyframes bulb-flicker-1 {
+  0%,
+  100% {
+    background: #ff2200;
+    box-shadow: 0 0 8px 2px #ff2200;
+    border-color: #ff2200;
+  }
+  25% {
+    background: #333;
+    box-shadow: none;
+    border-color: #444;
+  }
+  50% {
+    background: #ff2200;
+    box-shadow: 0 0 8px 2px #ff2200;
+    border-color: #ff2200;
+  }
+  75% {
+    background: #333;
+    box-shadow: none;
+    border-color: #444;
+  }
+}
+
+@keyframes bulb-flicker-2 {
+  0%,
+  100% {
+    background: #333;
+    box-shadow: none;
+    border-color: #444;
+  }
+  30% {
+    background: #ff6600;
+    box-shadow: 0 0 8px 2px #ff6600;
+    border-color: #ff6600;
+  }
+  60% {
+    background: #333;
+    box-shadow: none;
+    border-color: #444;
+  }
+}
+
+@keyframes bulb-flicker-3 {
+  0%,
+  100% {
+    background: #ff0044;
+    box-shadow: 0 0 8px 2px #ff0044;
+    border-color: #ff0044;
+  }
+  40% {
+    background: #333;
+    box-shadow: none;
+    border-color: #444;
+  }
+}
+
+@keyframes bulb-flicker-4 {
+  0%,
+  100% {
+    background: #cc0000;
+    box-shadow: 0 0 8px 2px #cc0000;
+    border-color: #cc0000;
+  }
+  20% {
+    background: #333;
+    box-shadow: none;
+    border-color: #444;
+  }
+  50% {
+    background: #cc0000;
+    box-shadow: 0 0 8px 2px #cc0000;
+    border-color: #cc0000;
+  }
+}
+
+@keyframes bulb-off {
+  0%,
+  100% {
+    background: #333;
+    box-shadow: none;
+    border-color: #444;
+  }
+}
+
+.bulb {
+  animation-duration: 0.8s;
+  animation-timing-function: steps(1, end);
+  animation-iteration-count: infinite;
+  will-change: background, box-shadow, border-color;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.bulb:nth-child(1) {
+  animation-name: bulb-flicker-1;
+  animation-delay: 0s;
+}
+.bulb:nth-child(2) {
+  animation-name: bulb-flicker-2;
+  animation-delay: 0.1s;
+}
+.bulb:nth-child(3) {
+  animation-name: bulb-flicker-3;
+  animation-delay: 0.2s;
+}
+.bulb:nth-child(4) {
+  animation-name: bulb-flicker-4;
+  animation-delay: 0.3s;
+}
+.bulb:nth-child(5) {
+  animation-name: bulb-flicker-1;
+  animation-delay: 0.4s;
+}
+.bulb:nth-child(6) {
+  animation-name: bulb-flicker-2;
+  animation-delay: 0.5s;
+}
+.bulb:nth-child(7) {
+  animation-name: bulb-flicker-3;
+  animation-delay: 0.6s;
+}
+.bulb:nth-child(8) {
+  animation-name: bulb-flicker-4;
+  animation-delay: 0.1s;
+}
+.bulb:nth-child(9) {
+  animation-name: bulb-flicker-1;
+  animation-delay: 0.3s;
+}
+.bulb:nth-child(10) {
+  animation-name: bulb-flicker-2;
+  animation-delay: 0.5s;
+}
+.bulb:nth-child(11) {
+  animation-name: bulb-flicker-3;
+  animation-delay: 0.2s;
+}
+.bulb:nth-child(12) {
+  animation-name: bulb-flicker-4;
+  animation-delay: 0.4s;
+}
+.bulb:nth-child(13) {
+  animation-name: bulb-flicker-1;
+  animation-delay: 0.1s;
+}
+.bulb:nth-child(14) {
+  animation-name: bulb-flicker-2;
+  animation-delay: 0.3s;
+}
+.bulb:nth-child(15) {
+  animation-name: bulb-flicker-3;
+  animation-delay: 0.5s;
+}
+.bulb:nth-child(16) {
+  animation-name: bulb-flicker-4;
+  animation-delay: 0.2s;
+}
+
+.bulb.inactive {
+  animation: bulb-off 0.3s ease-out forwards;
+}
+
+/* ---------- PROFILE CARD SCROLL FLICKER ---------- */
+
+@keyframes card-flicker {
+  0%,
+  100% {
+    --flicker-opacity: 0;
+  }
+  25% {
+    --flicker-opacity: 0.6;
+  }
+  50% {
+    --flicker-opacity: 0.3;
+  }
+  75% {
+    --flicker-opacity: 0.8;
+  }
+}
+
+.profile-card {
+  --flicker-opacity: 0;
+}
+
+.profile-card.scrolling {
+  animation: card-flicker 0.08s steps(1, end) infinite;
+}
+
+.profile-card.scrolling img {
+  opacity: calc(0.7 + var(--flicker-opacity) * 0.3);
+  transition: opacity 60ms linear;
+}
+
 /* ---------- MOBILE ---------- */
 
 @media (max-width: 768px) {
@@ -229,6 +419,3 @@ img,
       -1px 0 rgba(0, 180, 255, 0.4);
   }
 }
-
-
-
