@@ -80,7 +80,7 @@ const events = [
   time: "10:00 AM",
   participants: "2",
   fees:"300",
-  image: "/assets/Dustin.jpeg",
+  image: "/assets/Dustin.webp",
   pos:"70%",
   rules: [
     "Participants: 2 members per team",
@@ -151,8 +151,8 @@ const events = [
   time: "10:00 AM",
   participants: "1-2",
   fees:"300",
-  image: "/assets/Dustin.jpeg",
-  pos:"50%",
+  image: "/assets/Dustin.webp",
+  pos:"20%",
   rules: [
     "Participants: 1–2 members per team",
     "Quiz consists of 4 rounds",
@@ -215,8 +215,8 @@ const events = [
   time: "10:00 AM",
   participants: "1-2",
   fees:"300",
-  image: "/assets/Codered.jpeg",
-  pos:"55%",
+  image: "/assets/Dustin.webp",
+  pos:"20%",
   rules: [
     "Participants: 1–2 members per team",
     "Event conducted over 2 days",
@@ -279,7 +279,7 @@ const events = [
   time: "10:00 AM",
   participants: "2-3",
   fees:"400",
-  image: "/assets/Russian.jpeg",
+  image: "/assets/Dustin.webp",
   pos:"20%",
   rules: [
     "Participants: 2–3 members per team",
