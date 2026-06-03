@@ -7,11 +7,16 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Separate vendor chunks for better caching
-          "react-vendor": ["react", "react-dom", "react-router-dom"],
-          "gsap-vendor": ["gsap"],
-          "ui-vendor": ["lucide-react"],
+        manualChunks(id) {
+          if (id.includes("node_modules/react") || id.includes("node_modules/react-dom") || id.includes("node_modules/react-router-dom")) {
+            return "react-vendor";
+          }
+          if (id.includes("node_modules/gsap")) {
+            return "gsap-vendor";
+          }
+          if (id.includes("node_modules/lucide-react")) {
+            return "ui-vendor";
+          }
         },
       },
     },
