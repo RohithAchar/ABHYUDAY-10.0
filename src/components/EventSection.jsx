@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
-  const events = [
+const events = [
   {
     id: "01",
     slug: "search-for-will",
@@ -368,7 +368,6 @@ const EventsSection = () => {
               backdrop-blur-sm
             "
           >
-            
             {/* Image */}
 
             <div className="relative h-[240px] overflow-hidden">
@@ -489,12 +488,12 @@ const EventsSection = () => {
               >
                 {event.title}
               </h3>
-{/* ADD THIS ↓ */}
-{event.displayTitle && (
-  <p className="mt-2 text-white/40 font-mono text-[15px] uppercase tracking-[0.2em]">
-    {event.displayTitle}
-  </p>
-)}
+              {/* ADD THIS ↓ */}
+              {event.displayTitle && (
+                <p className="mt-2 text-white/40 font-mono text-[15px] uppercase tracking-[0.2em]">
+                  {event.displayTitle}
+                </p>
+              )}
               <p
                 className="
                   mt-5
@@ -516,8 +515,8 @@ const EventsSection = () => {
 
               <div className="mt-8 flex items-center justify-between">
                 <Link
-  to={`/events/${event.slug}`}
-  className="
+                  to={`/events/${event.slug}`}
+                  className="
     border
     border-red-500/30
     px-4
@@ -533,9 +532,9 @@ const EventsSection = () => {
     group-hover:bg-red-500
     group-hover:text-black
   "
->
-  Enter Event
-</Link>
+                >
+                  Enter Event
+                </Link>
 
                 <div
                   className="

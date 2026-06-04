@@ -439,7 +439,7 @@ export default function EventDetail() {
         <img
           src={event.image}
           alt={event.title}
-          className="w-full h-full object-cover brightness-[0.35] contrast-[1.15] scale-105"
+          className="w-full h-full object-cover brightness-[1] contrast-[1.15] scale-105"
           style={{ objectPosition: "center 20%" }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
@@ -474,7 +474,7 @@ export default function EventDetail() {
         {/* Title block */}
         <div className="mb-10">
           <div className="overflow-hidden mb-3">
-            <p className="ed-subtitle text-red-500 font-mono text-[10px] md:text-xs uppercase tracking-[0.25em]">
+            <p className="ed-subtitle text-red-500 font-mono text-xs md:text-sm uppercase tracking-[0.25em]">
               {event.subtitle}
             </p>
           </div>
@@ -503,7 +503,7 @@ export default function EventDetail() {
               </p>
             </h1>
           </div>
-          <p className="ed-subtitle mt-5 text-white/50 text-base md:text-lg leading-relaxed max-w-[50ch]">
+          <p className="ed-subtitle mt-5 text-white/50 text-lg md:text-xl leading-relaxed max-w-[50ch]">
             {event.desc}
           </p>
         </div>
@@ -515,8 +515,20 @@ export default function EventDetail() {
               label: "Date",
               value: event.date,
               icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                  <path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-5 h-5"
+                >
+                  <path d="M8 2v4" />
+                  <path d="M16 2v4" />
+                  <rect width="18" height="18" x="3" y="4" rx="2" />
+                  <path d="M3 10h18" />
                 </svg>
               ),
             },
@@ -524,8 +536,18 @@ export default function EventDetail() {
               label: "Time",
               value: event.time,
               icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                  <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-5 h-5"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
                 </svg>
               ),
             },
@@ -533,8 +555,18 @@ export default function EventDetail() {
               label: "Fees",
               value: event.fees ? `₹${event.fees}` : "",
               icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                  <line x1="12" x2="12" y1="2" y2="22" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-5 h-5"
+                >
+                  <line x1="12" x2="12" y1="2" y2="22" />
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                 </svg>
               ),
             },
@@ -542,8 +574,20 @@ export default function EventDetail() {
               label: "Participants",
               value: event.participants,
               icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-5 h-5"
+                >
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg>
               ),
             },
@@ -554,11 +598,11 @@ export default function EventDetail() {
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-red-500/60">{item.icon}</span>
-                <p className="text-red-500/60 font-mono text-[9px] uppercase tracking-[0.35em]">
+                <p className="text-red-500/60 font-mono text-[10px] uppercase tracking-[0.35em]">
                   {item.label}
                 </p>
               </div>
-              <p className="text-white font-mono text-sm md:text-base">
+              <p className="text-white font-mono text-base md:text-lg">
                 {item.value}
               </p>
             </div>
@@ -572,10 +616,21 @@ export default function EventDetail() {
             <div className="flex items-center gap-4 mb-7">
               <div className="h-px flex-1 bg-red-500/20" />
               <div className="flex items-center gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-red-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-6 h-6 text-red-500"
+                >
                   <path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3" />
                   <path d="M14 2v4a2 2 0 0 0 2 2h4" />
-                  <path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" />
+                  <path d="M10 9H8" />
+                  <path d="M16 13H8" />
+                  <path d="M16 17H8" />
                 </svg>
                 <p
                   className="text-white text-xl md:text-2xl uppercase tracking-[-0.02em] font-black"
@@ -592,10 +647,10 @@ export default function EventDetail() {
             <ul className="space-y-3">
               {event.rules.map((rule, i) => (
                 <li key={i} className="flex items-start gap-4 group">
-                  <span className="text-red-500 font-mono text-xs mt-[3px] opacity-70">
+                  <span className="text-red-500 font-mono text-sm mt-[3px] opacity-70">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-white/70 text-sm md:text-base leading-relaxed group-hover:text-white transition-colors duration-200">
+                  <span className="text-white/70 text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-200">
                     {rule}
                   </span>
                 </li>
@@ -610,7 +665,16 @@ export default function EventDetail() {
               <div className="flex items-center gap-4 mb-7">
                 <div className="h-px flex-1 bg-red-500/20" />
                 <div className="flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-red-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-6 h-6 text-red-500"
+                  >
                     <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
                     <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
                     <path d="M4 22h16" />
@@ -659,10 +723,19 @@ export default function EventDetail() {
             {/* Contact */}
             <div className="ed-section border border-red-500/15 bg-black/60 backdrop-blur-sm p-6 md:p-8">
               <div className="flex items-center gap-2 mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-red-500/60">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className=            "w-5 h-5 text-red-500/60"
+                >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
-                <p className="text-red-500/60 font-mono text-[9px] uppercase tracking-[0.35em]">
+                <p className="text-red-500/60 font-mono text-[10px] uppercase tracking-[0.35em]">
                   Contact
                 </p>
               </div>
@@ -673,19 +746,37 @@ export default function EventDetail() {
                   {event.contact.map((person, i) => (
                     <div key={i} className="border-l border-red-500/20 pl-4">
                       <div className="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-red-500/50">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="w-3.5 h-3.5 text-red-500/50"
+                        >
                           <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
                           <circle cx="12" cy="7" r="4" />
                         </svg>
-                        <p className="text-white text-sm md:text-base font-semibold">
+                        <p className="text-white text-base md:text-lg font-semibold">
                           {person.name}
                         </p>
                       </div>
                       <div className="flex items-center gap-1.5 ml-5.5">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 text-red-500/50">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="w-3 h-3 text-red-500/50"
+                        >
                           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                         </svg>
-                        <p className="text-white/60 font-mono text-sm">
+                        <p className="text-white/60 font-mono text-base">
                           {person.phone}
                         </p>
                       </div>
@@ -698,13 +789,22 @@ export default function EventDetail() {
                   {Object.entries(event.contact).map(([category, contacts]) => (
                     <div key={category}>
                       <div className="flex items-center gap-2 mb-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-red-500">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="w-3.5 h-3.5 text-red-500"
+                        >
                           <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                           <circle cx="9" cy="7" r="4" />
                           <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
                           <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                         </svg>
-                        <h3 className="text-red-500 font-mono text-xs uppercase tracking-[0.3em]">
+                        <h3 className="text-red-500 font-mono text-sm uppercase tracking-[0.3em]">
                           {category}
                         </h3>
                       </div>
@@ -716,19 +816,37 @@ export default function EventDetail() {
                             className="border-l border-red-500/20 pl-4"
                           >
                             <div className="flex items-center gap-2">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-red-500/50">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="w-3.5 h-3.5 text-red-500/50"
+                              >
                                 <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
                                 <circle cx="12" cy="7" r="4" />
                               </svg>
-                              <p className="text-white text-sm md:text-base font-semibold">
+                              <p className="text-white text-base md:text-lg font-semibold">
                                 {person.name}
                               </p>
                             </div>
                             <div className="flex items-center gap-1.5 ml-5.5">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 text-red-500/50">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="w-3 h-3 text-red-500/50"
+                              >
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                               </svg>
-                              <p className="text-white/60 font-mono text-sm">
+                              <p className="text-white/60 font-mono text-base">
                                 {person.phone}
                               </p>
                             </div>
@@ -761,7 +879,16 @@ export default function EventDetail() {
             "
           >
             <span className="relative z-10">Register Now</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="relative z-10 w-4 h-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="relative z-10 w-4 h-4"
+            >
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
               <polyline points="15 3 21 3 21 9" />
               <line x1="10" x2="21" y1="14" y2="3" />
@@ -769,7 +896,7 @@ export default function EventDetail() {
             <div className="absolute inset-0 bg-red-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
           </a>
 
-          <p className="text-white/25 font-mono text-[10px] uppercase tracking-[0.25em]">
+          <p className="text-white/25 font-mono text-xs uppercase tracking-[0.25em]">
             Spots are limited — act fast
           </p>
         </div>
@@ -779,13 +906,31 @@ export default function EventDetail() {
       <div className="relative z-10 pb-10 text-center">
         <div className="mx-auto mb-4 h-px w-32 bg-red-500/20" />
         <div className="flex items-center justify-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 text-red-500/40">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="w-3 h-3 text-red-500/40"
+          >
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
           </svg>
-          <p className="text-red-500/40 font-mono text-[9px] uppercase tracking-[0.35em]">
+          <p className="text-red-500/40 font-mono text-[10px] uppercase tracking-[0.35em]">
             Stay Tuned. Stay Curious.
           </p>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 text-red-500/40">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="w-3 h-3 text-red-500/40"
+          >
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
           </svg>
         </div>
