@@ -845,7 +845,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
             {/* Interactive CTA */}
             <button
               onClick={downloadPDF}
-              className="group cursor-pointer ab-cta mt-5 md:mt-14 border border-red-500 px-8 md:px-12 py-3 md:py-4 text-red-500 uppercase tracking-[0.24em] md:tracking-[0.4em] font-mono text-[10px] md:text-sm hover:bg-red-500 hover:text-black transition-all duration-300"
+              className="group cursor-pointer ab-cta mt-5 md:mt-14 border border-red-500 px-8 md:px-12 py-3 md:py-4 text-red-500 uppercase tracking-[0.24em] md:tracking-[0.4em] font-mono text-[10px] md:text-sm hover:bg-red-500 hover:text-black transition-all duration-300 min-w-[180px] md:min-w-[240px]"
             >
               {downloadProgress !== null ? (
                 <span>{downloadProgress}%</span>
