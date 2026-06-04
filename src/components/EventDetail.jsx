@@ -4,36 +4,8 @@ import gsap from "gsap";
 
 const events = [
   {
-    slug: "search-for-will",
-    id: "01",
-    title: "Treasure Hunt",
-    displayTitle: "SEARCH FOR WILL",
-    subtitle: "HUNT. SOLVE. SURVIVE.",
-    desc: "Crack clues, solve mysteries, and race against time in the ultimate treasure hunt adventure.",
-    date: "12 June 2026",
-    time: "10:00 AM",
-    participants: "3-4",
-    fees: "600",
-    image: "/assets/11.jpg",
-    rules: [
-      "Participants: 3–4 members per team",
-      "Maximum two teams per college",
-      "Mobile phones are not allowed unless instructed",
-      "Restricted areas must not be entered",
-      "Maintain teamwork and discipline",
-      "Damage to college property is prohibited",
-      "Each team will be assigned one volunteer",
-      "Rule violations will lead to disqualification",
-    ],
-    prizes: ["₹10,000 — 1st Place", "₹5,000 — 2nd Place", "₹2,500 — 3rd Place"],
-    contact: [
-      { name: "Sai Keerthana", phone: "+91 8050998508" },
-      { name: "Anusha", phone: "+91 7019400845" },
-    ],
-  },
-  {
     slug: "shadow-protocol",
-    id: "02",
+    id: "01",
     title: "Cyber Event",
     displayTitle: "SHADOW PROTOCOL",
     subtitle: "HACK. DEFEND. DOMINATE.",
@@ -41,27 +13,28 @@ const events = [
     date: "12 June 2026",
     time: "10:00 AM",
     participants: "2-4",
-    fees: "600",
+    fees: "400",
     image: "/assets/Dustin.webp",
     rules: [
-      "Participants: 2–4 members per team",
-      "Bring your own laptops and accessories",
-      "Only organizer-approved tools are allowed",
-      "AI tools and browsing are restricted",
-      "No attacks outside event scope",
-      "Harmful payloads are prohibited",
-      "Cheating will lead to disqualification",
-      "Judges’ decisions are final",
+      "Participants may use only the tools and software permitted by the organizers",
+      "AI tools and web browsing are restricted unless explicitly allowed for a challenge",
+      "Any attempt to attack or disrupt systems outside the event scope is strictly prohibited",
+      "Use of malicious payloads or harmful activities that may damage systems, networks, or data is not allowed",
+      "Participants must not exploit vulnerabilities on devices belonging to other participants",
+      "Participants must bring their own laptops, chargers, and required accessories",
+      "Cheating, sharing flags/answers, damaging infrastructure, or violating event policies will result in immediate disqualification",
+      "Participants must follow all the instructions given by judges and coordinators. Their decisions will be the final and binding",
     ],
-    prizes: ["₹12,000 — 1st Place", "₹6,000 — 2nd Place", "₹3,000 — 3rd Place"],
+    prizes: "Exciting Prizes Available for Winners!",
     contact: [
       { name: "V Varun Murthy", phone: "+91 9353751069" },
       { name: "Sinchana Shetty", phone: "+91 8971638535" },
+      { name: "Sujith Kumar", phone: "+91 8892712235" },
     ],
   },
   {
     slug: "the-hawkins-design-lab",
-    id: "03",
+    id: "02",
     title: "UI/UX",
     displayTitle: "THE HAWKINS DESIGN LAB",
     subtitle: "DESIGN. CREATE. IMPRESS.",
@@ -72,19 +45,22 @@ const events = [
     fees: "200",
     image: "/assets/Dustin.webp",
     rules: [
-      "Participants: 2 members per team",
-      "Bring your own laptops/devices",
-      "Designs must be created using Canva only",
-      "CSS/UI libraries are not allowed",
-      "AI tools allowed only during permitted timings",
-      "Unfair means lead to disqualification",
-      "Judges’ decisions are final",
+      "Participants must bring their own laptops/devices",
+      "Designs must be created only using Figma",
+      "Use of CSS/UI libraries or frameworks is not permitted",
+      "AI tools may be used only during permitted timings",
+      "Teams will be judged on creativity, innovation, and presentation",
+      "Any unfair means will lead to disqualification",
+      "Judges' decisions will be the final and binding",
+      "UG and PG participants will compete separately, and winners will be declared independently for each category",
     ],
-    prizes: ["₹8,000 — 1st Place", "₹4,000 — 2nd Place", "₹2,000 — 3rd Place"],
+    prizes: "Exciting Prizes Available for UG & PG Categories",
     contact: {
       UG: [
         { name: "Chandana D", phone: "+91 9686915540" },
         { name: "Bhumika", phone: "+91 8747852889" },
+        { name: "Aravind", phone: "+91 6361357174" },
+        { name: "Afreed", phone: "+91 9741799939" },
       ],
       PG: [
         { name: "Mayur Joshi", phone: "+91 9741092761" },
@@ -94,7 +70,7 @@ const events = [
   },
   {
     slug: "vecnas-arena",
-    id: "04",
+    id: "03",
     title: "BGMI",
     displayTitle: "VECNAS ARENA",
     subtitle: "SURVIVE. FIGHT. WIN.",
@@ -102,84 +78,114 @@ const events = [
     date: "12 June 2026",
     time: "10:00 AM",
     participants: "4",
-    fees: "600",
+    fees: "400",
     image: "/assets/Dustin.webp",
     rules: [
-      "Participants: 4 members per team",
-      "Tournament consists of 4 rounds",
-      "All maps must be downloaded beforehand",
-      "No hacks or third-party tools allowed",
-      "Points based on kills and placement",
-      "Misconduct leads to disqualification",
-      "Organizers’ decisions are final",
+      "The tournament consists of 4 rounds",
+      "Participants must report before the scheduled time",
+      "All required maps must be downloaded before the event",
+      "Use of hacks, cheats, or third-party tools is strictly prohibited",
+      "Points will be awarded based on kills and placement",
+      "Any misconduct or unfair play will result in disqualification",
+      "Participants must follow the coordinators instructions",
+      "Organizers' decisions will be the final and binding",
     ],
-    prizes: ["₹15,000 — 1st Place", "₹8,000 — 2nd Place", "₹4,000 — 3rd Place"],
+    prizes: "Exciting Prizes Available for Winners!",
     contact: [
-      { name: "Bala Swamy I", phone: "+91 6374262694" },
+      { name: "Bala Swamy", phone: "+91 6374262694" },
       { name: "Anush K", phone: "+91 8088718755" },
-      { name: "Akshay R", phone: "+91 8904443218" },
+      { name: "Akshay", phone: "+91 8904443218" },
+      { name: "Vishwas M P", phone: "+91 8073338266" },
     ],
   },
   {
     slug: "dustins-desk",
-    id: "05",
+    id: "04",
     title: "IT Quiz",
     displayTitle: "DUSTINS DESK",
     subtitle: "THINK. ANSWER. WIN.",
     desc: "Challenge your technical knowledge and compete in a fast-paced IT quiz battle.",
     date: "12 June 2026",
     time: "10:00 AM",
-    participants: "1-2",
-    fees: "300",
+    participants: "2",
+    fees: "200",
     image: "/assets/Dustin.webp",
     rules: [
-      "Participants: 1–2 members per team",
-      "Quiz consists of 4 rounds",
-      "Answer within the given time limit",
-      "Mobile phones are prohibited",
-      "Maintain discipline throughout the event",
-      "Malpractice leads to disqualification",
-      "Report before scheduled time",
-      "Judges’ decisions are final",
+      "The quiz consists of 4 rounds",
+      "Participants must answer within the given time limit",
+      "Mobile phones and electronic gadgets are strictly prohibited",
+      "Participants must maintain discipline throughout the event",
+      "Any malpractice or misconduct will lead to disqualification",
+      "Participants must report before the scheduled time",
+      "Judges' decisions will be the final and binding",
     ],
-    prizes: ["₹7,000 — 1st Place", "₹3,500 — 2nd Place", "₹1,500 — 3rd Place"],
-    contact: {
-      UG: [
-        { name: "Ruchitha Reddy M P", phone: "+91 9611588905" },
-        { name: "Shreya Gupta", phone: "+91 XXXXXXXX" },
-      ],
-      PG: [
-        { name: "K D Navya ", phone: "+91 9901921771" },
-        { name: "Vaibhav", phone: "+91 9143626262" },
-      ],
-    },
+    prizes: "Exciting Prizes Available for Winners!",
+    contact: [
+      { name: "Ruchitha Reddy M P", phone: "+91 9535556635" },
+      { name: "Shreya Gupta", phone: "+91 7260040597" },
+      { name: "Karthik R S", phone: "+91 6361154606" },
+      { name: "Navya", phone: "+91 9901921771" },
+      { name: "Vaibhav", phone: "+91 9143626262" },
+      { name: "Ganesh K", phone: "+91 8310821825" },
+    ],
   },
   {
     slug: "the-mind-flayer",
-    id: "06",
+    id: "05",
     title: "Ideathon",
     displayTitle: "THE MIND FLAYER",
     subtitle: "IMAGINE. INNOVATE. PITCH.",
     desc: "Present groundbreaking ideas and compete to build the next big innovation.",
     date: "12 June 2026",
     time: "10:00 AM",
-    participants: "1-3",
-    fees: "400",
+    participants: "1-2",
+    fees: "200",
     image: "/assets/Dustin.webp",
     rules: [
-      "Participants: 1–3 members per team",
-      "Maximum 4 teams per college",
-      "Carry valid college ID cards",
-      "Ideas must be original and innovative",
-      "Plagiarism leads to disqualification",
-      "Submissions checked for authenticity",
-      "Follow all event guidelines",
-      "Jury decisions are final",
+      "Maximum of 4 team registrations per college",
+      "Team can consist of minimum 1 and maximum 3 participants",
+      "Participants must carry their college ID cards",
+      "Participation may be extended based on available slots and time",
+      "The idea presented must be original and innovative",
+      "Plagiarism of any kind will lead to immediate disqualification",
+      "Submissions will be thoroughly checked for authenticity",
+      "The decision of the jury will be the final and binding",
     ],
-    prizes: ["₹10,000 — 1st Place", "₹5,000 — 2nd Place", "₹2,500 — 3rd Place"],
+    prizes: "Exciting Prizes Available for Winners!",
     contact: [
       { name: "Rakshitha S", phone: "+91 8618649029" },
       { name: "Ananya H M", phone: "+91 9019882242" },
+      { name: "Ankita", phone: "+91 8088006141" },
+    ],
+  },
+  {
+    slug: "search-for-will",
+    id: "06",
+    title: "Treasure Hunt",
+    displayTitle: "SEARCH FOR WILL",
+    subtitle: "HUNT. SOLVE. SURVIVE.",
+    desc: "Crack clues, solve mysteries, and race against time in the ultimate treasure hunt adventure.",
+    date: "12 June 2026",
+    time: "10:00 AM",
+    participants: "3-4",
+    fees: "400",
+    image: "/assets/11.jpg",
+    rules: [
+      "Participants should not use their mobile phones during the event, until explicitly mentioned by the event volunteers",
+      "Participants should not go near the restricted areas",
+      "All participants must maintain co-operation, team-spirit, and respect for each other",
+      "Participants should take care that college property should not be damaged",
+      "If participants indulge in any sort of clashes or fights, it should be reported to the event coordinator",
+      "Each team would be assigned with one volunteer",
+      "If any team member is found violating the rules, the respective team will be disqualified",
+      "Maximum two teams per college is allowed",
+    ],
+    prizes: "Exciting Prizes Available for Winners!",
+    contact: [
+      { name: "Sai Keerthana", phone: "+91 8050998508" },
+      { name: "Anusha", phone: "+91 7019400845" },
+      { name: "Mayur H", phone: "+91 8088198131" },
+      { name: "Likhitha C S", phone: "+91 7892276105" },
     ],
   },
   {
@@ -192,27 +198,29 @@ const events = [
     date: "12 June 2026",
     time: "10:00 AM",
     participants: "1-2",
-    fees: "300",
+    fees: "200",
     image: "/assets/Dustin.webp",
     rules: [
-      "Participants: 1–2 members per team",
-      "Event conducted over 2 days",
-      "Systems will be provided",
-      "Internet usage only when instructed",
-      "Malpractice leads to disqualification",
-      "Submit within the given time limit",
-      "Maintain professionalism",
-      "Judges’ decisions are final",
+      "The event will be conducted over 2 days",
+      "Systems will be provided for participants",
+      "Internet usage is allowed only when instructed",
+      "Any malpractice or unfair means will lead to disqualification",
+      "Teams must submit solutions within the given time limit",
+      "Participants must maintain discipline and professionalism",
+      "UG and PG participants will compete separately, and winners will be declared independently for each category",
+      "Judges' decisions will be the final and binding",
     ],
-    prizes: ["₹9,000 — 1st Place", "₹4,500 — 2nd Place", "₹2,000 — 3rd Place"],
+    prizes: "Exciting Prizes Available for UG & PG Categories",
     contact: {
       UG: [
-        { name: "Shivu prasad", phone: "+91 87622 33537" },
+        { name: "Shiva Prasad", phone: "+91 8762233537" },
         { name: "Shreenivasa", phone: "+91 9916925969" },
+        { name: "Dhruvan H", phone: "+91 9480593155" },
       ],
       PG: [
-        { name: "Abjeet Yadav", phone: "+91 9353266834" },
-        { name: "Alfiya ", phone: "+91 7676793985" },
+        { name: "Abjeet", phone: "+91 9353266834" },
+        { name: "Alfiya", phone: "+91 7676793985" },
+        { name: "Adesh", phone: "+91 9136191475" },
       ],
     },
   },
@@ -225,79 +233,80 @@ const events = [
     desc: "Create engaging cinematic reels and bring your storytelling skills to life.",
     date: "12 June 2026",
     time: "10:00 AM",
-    participants: "1-2",
-    fees: "300",
+    participants: "2",
+    fees: "200",
     image: "/assets/Dustin.webp",
     rules: [
-      "Participants: 2 members per team",
-      "Reel duration must be 60–90 seconds",
-      "Competition consists of 2 rounds",
-      "Only original content is allowed",
-      "Copied or offensive content is prohibited",
-      "Basic editing and music are permitted",
-      "Submit before the deadline",
-      "Judges’ decisions are final",
+      "Reel duration must be between 60–90 seconds in vertical format",
+      "The competition consists of 2 rounds",
+      "Only original and theme-based content is allowed",
+      "Vulgar, offensive, or copied content will lead to disqualification",
+      "Basic editing, music, and effects are permitted",
+      "Participants must follow event guidelines",
+      "Submissions must be completed within the specified time",
+      "Organizers' and judges' decisions will be the final and binding",
     ],
-    prizes: ["₹6,000 — 1st Place", "₹3,000 — 2nd Place", "₹1,500 — 3rd Place"],
+    prizes: "Exciting Prizes Available for Winners!",
     contact: [
-      { name: "Anish Kumar S", phone: "+91 8762575776" },
       { name: "Anju Shreya K M", phone: "+91 6363740142" },
+      { name: "Samskriti Shetty", phone: "+91 8296759865" },
+      { name: "Anish Kumar S", phone: "+91 8762575776" },
     ],
   },
   {
     slug: "the-russian-code",
     id: "09",
-    title: "Tech Puzzle",
+    title: "Tech Puzzle and Debate",
     displayTitle: "THE RUSSIAN CODE",
     subtitle: "SOLVE. THINK. ESCAPE.",
     desc: "Decode technical mysteries and solve challenging puzzles under pressure.",
     date: "12 June 2026",
     time: "10:00 AM",
     participants: "2-3",
-    fees: "400",
+    fees: "300",
     image: "/assets/Dustin.webp",
     rules: [
-      "Participants: 2–3 members per team",
-      "Maximum 2 teams per college",
-      "Bring your own devices",
-      "Early round scores determine finalists",
-      "Strict time limits must be followed",
-      "Malpractice leads to disqualification",
-      "Maintain discipline throughout the event",
-      "Judges’ decisions are final",
+      "A maximum of 2 teams per college is allowed",
+      "Participants must bring their own devices",
+      "Early round scores determine only qualification for finals",
+      "Time limits must be strictly followed",
+      "Malpractice or unfair means will result in disqualification",
+      "Participants must maintain discipline throughout the event",
+      "Judges' decisions will be the final and binding",
     ],
-    prizes: ["₹8,000 — 1st Place", "₹4,000 — 2nd Place", "₹2,000 — 3rd Place"],
+    prizes: "Exciting Prizes Available for Winners!",
     contact: [
+      { name: "Raksha", phone: "+91 8073087328" },
       { name: "Meghana Shree K", phone: "+91 7975747738" },
-      { name: "Raksha", phone: "+91 8296469415" },
+      { name: "Mohammed Yaseen", phone: "+91 9633702159" },
     ],
   },
   {
     slug: "lights-flicker",
     id: "10",
-    title: "Photography & Videography",
+    title: "Photography",
     displayTitle: "LIGHTS FLICKER",
     subtitle: "CAPTURE. CREATE. INSPIRE.",
     desc: "Capture cinematic moments and showcase your storytelling through visuals.",
     date: "12 June 2026",
     time: "10:00 AM",
-    participants: "2",
-    fees: "300",
+    participants: "1-2",
+    fees: "200",
     image: "/assets/Dustin.webp",
     rules: [
-      "Participants: Solo or up to 2 members",
-      "Event has 3 rounds over 2 days",
-      "Use your own cameras or smartphones",
-      "Drones are strictly prohibited",
-      "Editing not allowed in Round 1",
-      "Plagiarism or stock footage is prohibited",
-      "Submit before the specified deadline",
-      "Judges’ decisions are final",
+      "A maximum of 2 teams per college is allowed",
+      "Participants must bring their own devices",
+      "Early round scores determine only qualification for finals",
+      "Time limits must be strictly followed",
+      "Malpractice or unfair means will result in disqualification",
+      "Participants must maintain discipline throughout the event",
+      "Judges' decisions will be the final and binding",
     ],
-    prizes: ["₹7,000 — 1st Place", "₹3,500 — 2nd Place", "₹1,500 — 3rd Place"],
+    prizes: "Exciting Prizes Available for Winners!",
     contact: [
+      { name: "Anubha V Singh", phone: "+91 9019524631" },
       { name: "Aryan Chaubey", phone: "+91 9044920096" },
-      { name: "Anubhav Singh", phone: "+91 9019524631" },
+      { name: "Mihir A Divakar", phone: "+91 7019010176" },
     ],
   },
 ];
@@ -405,9 +414,19 @@ export default function EventDetail() {
           onClick={handleBack}
           className="ed-back inline-flex items-center gap-3 text-red-500 font-mono text-xs uppercase tracking-[0.3em] hover:text-white transition-colors duration-300 group cursor-pointer"
         >
-          <span className="transition-transform duration-300 group-hover:-translate-x-1">
-            ←
-          </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1"
+          >
+            <path d="m12 19-7-7 7-7" />
+            <path d="M19 12H5" />
+          </svg>
           Back to Events
         </button>
       </div>
@@ -492,18 +511,53 @@ export default function EventDetail() {
         {/* Meta strip */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-red-500/10 border border-red-500/15 mb-12">
           {[
-            { label: "Date", value: event.date },
-            { label: "Time", value: event.time },
-            { label: "Fees", value: event.fees ? `₹${event.fees}` : "" },
-            { label: "Participants", value: event.participants },
+            {
+              label: "Date",
+              value: event.date,
+              icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                  <path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" />
+                </svg>
+              ),
+            },
+            {
+              label: "Time",
+              value: event.time,
+              icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                  <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+                </svg>
+              ),
+            },
+            {
+              label: "Fees",
+              value: event.fees ? `₹${event.fees}` : "",
+              icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                  <line x1="12" x2="12" y1="2" y2="22" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+              ),
+            },
+            {
+              label: "Participants",
+              value: event.participants,
+              icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              ),
+            },
           ].map((item) => (
             <div
               key={item.label}
               className="ed-meta-item bg-black px-4 py-4 md:px-8 md:py-6"
             >
-              <p className="text-red-500/60 font-mono text-[9px] uppercase tracking-[0.35em] mb-2">
-                {item.label}
-              </p>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-red-500/60">{item.icon}</span>
+                <p className="text-red-500/60 font-mono text-[9px] uppercase tracking-[0.35em]">
+                  {item.label}
+                </p>
+              </div>
               <p className="text-white font-mono text-sm md:text-base">
                 {item.value}
               </p>
@@ -517,15 +571,22 @@ export default function EventDetail() {
           <div className="ed-section border border-red-500/15 bg-black/60 backdrop-blur-sm p-6 md:p-8">
             <div className="flex items-center gap-4 mb-7">
               <div className="h-px flex-1 bg-red-500/20" />
-              <p
-                className="text-white text-xl md:text-2xl uppercase tracking-[-0.02em] font-black"
-                style={{
-                  fontFamily:
-                    'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
-                }}
-              >
-                Rules
-              </p>
+              <div className="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-red-500">
+                  <path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3" />
+                  <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                  <path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" />
+                </svg>
+                <p
+                  className="text-white text-xl md:text-2xl uppercase tracking-[-0.02em] font-black"
+                  style={{
+                    fontFamily:
+                      'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
+                  }}
+                >
+                  Rules
+                </p>
+              </div>
               <div className="h-px flex-1 bg-red-500/20" />
             </div>
             <ul className="space-y-3">
@@ -548,46 +609,86 @@ export default function EventDetail() {
             <div className="ed-section border border-red-500/15 bg-black/60 backdrop-blur-sm p-6 md:p-8">
               <div className="flex items-center gap-4 mb-7">
                 <div className="h-px flex-1 bg-red-500/20" />
-                <p
-                  className="text-white text-xl md:text-2xl uppercase tracking-[-0.02em] font-black"
-                  style={{
-                    fontFamily:
-                      'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
-                  }}
-                >
-                  Prizes
-                </p>
+                <div className="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-red-500">
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                    <path d="M4 22h16" />
+                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                  </svg>
+                  <p
+                    className="text-white text-xl md:text-2xl uppercase tracking-[-0.02em] font-black"
+                    style={{
+                      fontFamily:
+                        'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
+                    }}
+                  >
+                    Prizes
+                  </p>
+                </div>
                 <div className="h-px flex-1 bg-red-500/20" />
               </div>
-              <ul className="space-y-3">
-                {event.prizes.map((prize, i) => (
-                  <li key={i} className="flex items-center gap-4">
-                    <span className="w-2 h-2 bg-red-500 flex-shrink-0" />
-                    <span className="text-white/70 text-sm md:text-base">
-                      {prize}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border border-red-500/30 flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-5 h-5 md:w-6 md:h-6 text-red-500"
+                  >
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                    <path d="M4 22h16" />
+                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                  </svg>
+                </div>
+                <p className="text-white/70 text-sm md:text-base leading-relaxed pt-2 md:pt-3">
+                  {event.prizes}
+                </p>
+              </div>
             </div>
 
             {/* Contact */}
             <div className="ed-section border border-red-500/15 bg-black/60 backdrop-blur-sm p-6 md:p-8">
-              <p className="text-red-500/60 font-mono text-[9px] uppercase tracking-[0.35em] mb-6">
-                Contact
-              </p>
+              <div className="flex items-center gap-2 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-red-500/60">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <p className="text-red-500/60 font-mono text-[9px] uppercase tracking-[0.35em]">
+                  Contact
+                </p>
+              </div>
 
               {/* Normal Contact Array */}
               {Array.isArray(event.contact) ? (
                 <div className="space-y-4">
                   {event.contact.map((person, i) => (
                     <div key={i} className="border-l border-red-500/20 pl-4">
-                      <p className="text-white text-sm md:text-base font-semibold">
-                        {person.name}
-                      </p>
-                      <p className="text-white/60 font-mono text-sm">
-                        {person.phone}
-                      </p>
+                      <div className="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-red-500/50">
+                          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                          <circle cx="12" cy="7" r="4" />
+                        </svg>
+                        <p className="text-white text-sm md:text-base font-semibold">
+                          {person.name}
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-1.5 ml-5.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 text-red-500/50">
+                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        <p className="text-white/60 font-mono text-sm">
+                          {person.phone}
+                        </p>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -596,9 +697,17 @@ export default function EventDetail() {
                 <div className="space-y-6">
                   {Object.entries(event.contact).map(([category, contacts]) => (
                     <div key={category}>
-                      <h3 className="text-red-500 font-mono text-xs uppercase tracking-[0.3em] mb-3">
-                        {category}
-                      </h3>
+                      <div className="flex items-center gap-2 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-red-500">
+                          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                          <circle cx="9" cy="7" r="4" />
+                          <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                        <h3 className="text-red-500 font-mono text-xs uppercase tracking-[0.3em]">
+                          {category}
+                        </h3>
+                      </div>
 
                       <div className="space-y-3">
                         {contacts.map((person, i) => (
@@ -606,12 +715,23 @@ export default function EventDetail() {
                             key={i}
                             className="border-l border-red-500/20 pl-4"
                           >
-                            <p className="text-white text-sm md:text-base font-semibold">
-                              {person.name}
-                            </p>
-                            <p className="text-white/60 font-mono text-sm">
-                              {person.phone}
-                            </p>
+                            <div className="flex items-center gap-2">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-red-500/50">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                              </svg>
+                              <p className="text-white text-sm md:text-base font-semibold">
+                                {person.name}
+                              </p>
+                            </div>
+                            <div className="flex items-center gap-1.5 ml-5.5">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 text-red-500/50">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                              </svg>
+                              <p className="text-white/60 font-mono text-sm">
+                                {person.phone}
+                              </p>
+                            </div>
                           </div>
                         ))}
                       </div>
@@ -630,7 +750,7 @@ export default function EventDetail() {
             target="_blank"
             rel="noopener noreferrer"
             className="
-              relative overflow-hidden inline-block
+              relative overflow-hidden inline-flex items-center gap-2
               border border-red-500
               px-4 py-2
               text-l uppercase tracking-[0.35em] font-mono
@@ -641,6 +761,11 @@ export default function EventDetail() {
             "
           >
             <span className="relative z-10">Register Now</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="relative z-10 w-4 h-4">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" x2="21" y1="14" y2="3" />
+            </svg>
             <div className="absolute inset-0 bg-red-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
           </a>
 
@@ -653,9 +778,17 @@ export default function EventDetail() {
       {/* Footer line */}
       <div className="relative z-10 pb-10 text-center">
         <div className="mx-auto mb-4 h-px w-32 bg-red-500/20" />
-        <p className="text-red-500/40 font-mono text-[9px] uppercase tracking-[0.35em]">
-          Stay Tuned. Stay Curious.
-        </p>
+        <div className="flex items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 text-red-500/40">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+          <p className="text-red-500/40 font-mono text-[9px] uppercase tracking-[0.35em]">
+            Stay Tuned. Stay Curious.
+          </p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 text-red-500/40">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+        </div>
       </div>
     </div>
   );
