@@ -674,8 +674,6 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
             className="absolute inset-0 w-full h-full"
             style={{
               background: `
-                radial-gradient(circle at 0% 0%, rgba(220, 38, 38, 0.55) 0%, transparent 45%),
-                radial-gradient(circle at 100% 0%, rgba(185, 28, 28, 0.55) 0%, transparent 45%),
                 radial-gradient(circle at 0% 100%, rgba(185, 28, 28, 0.55) 0%, transparent 45%),
                 radial-gradient(circle at 100% 100%, rgba(220, 38, 38, 0.55) 0%, transparent 45%),
                 #000000
