@@ -24,6 +24,19 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [imagesReady, setImagesReady] = useState(false);
 
+  const downloadPDF = async () => {
+    const response = await fetch("/assets/ABHYUDAY_10.0_BROCHURE.pdf");
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "ABHYUDAY_10.0_BROCHURE.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+  };
+
   useEffect(() => {
     setIsMobile(window.innerWidth <= 768);
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -768,7 +781,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
                   { label: "LOCATION", value: "RIT CAMPUS" },
                   { label: "TRANSMISSION", value: "ACTIVE" },
                   { label: "STATUS", value: "OPEN" },
-                  { label: "DATE", value: "June 12 2026" },
+                  { label: "DATE", value: "12 & 13th JUNE 2026" },
                   // { label: "CHANNEL", value: "v1.0" },
                 ].map((item, index) => (
                   <div
@@ -789,12 +802,12 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
               </div>
 
               {/* Desktop View grid */}
-              <div className="hidden md:grid grid-cols-4 gap-6 text-left font-mono">
+              <div className="hidden md:grid grid-cols-4 gap-6 text-left font-mono text-nowrap">
                 {[
                   { label: "Location", value: "RIT CAMPUS" },
                   { label: "Transmission", value: "ACTIVE" },
                   { label: "Status", value: "OPEN" },
-                  { label: "Date", value: "JUNE 12 2026" },
+                  { label: "Date", value: "12 & 13th JUNE 2026" },
                   // { label: "Channel", value: "v1.0" },
                 ].map((item, index) => (
                   <div key={index} className="metadata-item overflow-hidden">
@@ -813,8 +826,16 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
             </div>
 
             {/* Interactive CTA */}
-            <button className="ab-cta mt-5 md:mt-14 border border-red-500 px-8 md:px-12 py-3 md:py-4 text-red-500 uppercase tracking-[0.24em] md:tracking-[0.4em] font-mono text-[10px] md:text-sm hover:bg-red-500 hover:text-black transition-all duration-300">
-              ENTER EXPERIENCE
+            <button
+              onClick={downloadPDF}
+              className="group cursor-pointer ab-cta mt-5 md:mt-14 border border-red-500 px-8 md:px-12 py-3 md:py-4 text-red-500 uppercase tracking-[0.24em] md:tracking-[0.4em] font-mono text-[10px] md:text-sm hover:bg-red-500 hover:text-black transition-all duration-300"
+            >
+              <span className="group-hover:opacity-0 transition-opacity duration-300">
+                EXPLORE ABHYUDAY
+              </span>
+              <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                DOWNLOAD
+              </span>
             </button>
           </div>
         </div>
