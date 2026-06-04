@@ -23,18 +23,35 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
 
   const [isMobile, setIsMobile] = useState(false);
   const [imagesReady, setImagesReady] = useState(false);
+  const [downloadProgress, setDownloadProgress] = useState(null);
 
-  const downloadPDF = async () => {
-    const response = await fetch("/assets/ABHYUDAY_10.0_BROCHURE.pdf");
-    const blob = await response.blob();
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "ABHYUDAY_10.0_BROCHURE.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    window.URL.revokeObjectURL(url);
+  const downloadPDF = () => {
+    if (downloadProgress !== null) return;
+    setDownloadProgress(0);
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "/assets/ABHYUDAY_10.0_BROCHURE.pdf", true);
+    xhr.responseType = "blob";
+    xhr.onprogress = (e) => {
+      if (e.lengthComputable) {
+        setDownloadProgress(Math.round((e.loaded / e.total) * 100));
+      }
+    };
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        const blob = xhr.response;
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "ABHYUDAY_10.0_BROCHURE.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      }
+      setDownloadProgress(null);
+    };
+    xhr.onerror = () => setDownloadProgress(null);
+    xhr.send();
   };
 
   useEffect(() => {
@@ -830,12 +847,18 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
               onClick={downloadPDF}
               className="group cursor-pointer ab-cta mt-5 md:mt-14 border border-red-500 px-8 md:px-12 py-3 md:py-4 text-red-500 uppercase tracking-[0.24em] md:tracking-[0.4em] font-mono text-[10px] md:text-sm hover:bg-red-500 hover:text-black transition-all duration-300"
             >
-              <span className="group-hover:opacity-0 transition-opacity duration-300">
-                EXPLORE ABHYUDAY
-              </span>
-              <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                DOWNLOAD
-              </span>
+              {downloadProgress !== null ? (
+                <span>{downloadProgress}%</span>
+              ) : (
+                <>
+                  <span className="group-hover:opacity-0 transition-opacity duration-300">
+                    EXPLORE ABHYUDAY
+                  </span>
+                  <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    DOWNLOAD
+                  </span>
+                </>
+              )}
             </button>
           </div>
         </div>
