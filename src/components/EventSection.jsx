@@ -282,7 +282,7 @@ const EventsSection = () => {
 
       tracking-[-0.03em]
 
-      font-black
+      font-medium
 
       text-center
 
@@ -300,25 +300,25 @@ const EventsSection = () => {
         <div className="overflow-hidden">
           <h2
             className="
-        heading-line
+                    heading-line
 
-      text-white
+                  text-white
 
-      text-[clamp(2.4rem,10vw,8rem)]
-      sm:text-[clamp(3rem,8vw,8rem)]
+                  text-[clamp(2.4rem,10vw,8rem)]
+                  sm:text-[clamp(3rem,8vw,8rem)]
 
-      leading-[0.95]
+                  leading-[0.95]
 
-      uppercase
+                  uppercase
 
-      tracking-[-0.03em]
+                  tracking-[-0.03em]
 
-      font-black
+                  font-medium
 
-      text-center
+                  text-center
 
-      break-words
-      "
+                  break-words
+                  "
             style={{
               fontFamily:
                 'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
@@ -425,7 +425,7 @@ const EventsSection = () => {
 
                     leading-none
 
-                    font-black
+                    font-medium
                   "
                   style={{
                     fontFamily:
@@ -477,7 +477,7 @@ const EventsSection = () => {
 
     tracking-[-0.02em]
 
-    font-black
+    font-medium
 
     break-words
                 "

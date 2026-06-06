@@ -118,7 +118,7 @@ const Footer = () => {
               className="
                 text-[clamp(3rem,8vw,7rem)]
                 leading-[0.82]
-                font-black
+                font-medium
                 uppercase
                 tracking-[-0.06em]
               "
@@ -157,10 +157,14 @@ const Footer = () => {
               Faculty Coordinator
             </p>
 
-            <p className="text-base md:text-lg text-white/50"></p>
-
             <p className="text-base md:text-lg text-white/50">
-              Dr. Evangalin Geetha :
+              Dr. D. Evangelin Geetha : +91 9620293370
+            </p>
+            <p className="text-base md:text-lg text-white/50">
+              Ms. Sahana: +91 8310017135
+            </p>
+            <p className="text-base md:text-lg text-white/50">
+              Ms. Deepali U : +91 7022078385
             </p>
             <p
               className="
@@ -247,7 +251,7 @@ const Footer = () => {
                         md:text-5xl
                         text-red-500
                         leading-none
-                        font-black
+                        font-medium
                         tabular-nums
                       "
                       style={{

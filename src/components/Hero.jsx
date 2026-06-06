@@ -637,7 +637,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
 
             <div className="overflow-hidden mt-2">
               <h1
-                className="hero-title text-white text-[clamp(2.4rem,10vw,8rem)] sm:text-[clamp(3rem,8vw,8rem)] leading-[0.95] uppercase tracking-[-0.03em] font-black text-center"
+                className="hero-title text-white text-[clamp(2.4rem,10vw,8rem)] sm:text-[clamp(3rem,8vw,8rem)] leading-[0.95] uppercase tracking-[-0.03em] font-medium text-center"
                 style={{
                   fontFamily:
                     'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
@@ -762,7 +762,7 @@ export const Hero = ({ incrementImagesLoaded, skipIntro }) => {
             </p>
 
             <h1
-              className="flex justify-center flex-nowrap whitespace-nowrap text-[clamp(2.9rem,15vw,16rem)] font-black uppercase leading-[0.82] tracking-[-0.06em] text-white select-none"
+              className="flex justify-center flex-nowrap whitespace-nowrap text-[clamp(2.9rem,15vw,16rem)] font-medium uppercase leading-[0.82] tracking-[-0.05em] text-white select-none"
               style={{
                 fontFamily:
                   'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',

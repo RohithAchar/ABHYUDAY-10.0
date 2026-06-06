@@ -379,7 +379,7 @@ export default function EventDetail() {
     return (
       <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center gap-6">
         <p
-          className="text-red-500 text-[clamp(4rem,12vw,10rem)] font-black uppercase leading-none"
+          className="text-red-500 text-[clamp(4rem,12vw,10rem)] font-medium uppercase leading-none"
           style={{
             fontFamily:
               'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
@@ -454,7 +454,7 @@ export default function EventDetail() {
         {/* Big ID number */}
         <div className="ed-id absolute bottom-6 right-6 md:bottom-10 md:right-10">
           <p
-            className="text-red-500/20 leading-none font-black"
+            className="text-red-500/20 leading-none font-medium"
             style={{
               fontFamily:
                 'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
@@ -481,7 +481,7 @@ export default function EventDetail() {
 
           <div className="overflow-hidden">
             <h1
-              className="ed-title text-white uppercase leading-[0.85] tracking-[-0.04em] font-black"
+              className="ed-title text-white uppercase leading-[0.85] tracking-[-0.04em] font-medium"
               style={{
                 fontFamily:
                   'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
@@ -633,7 +633,7 @@ export default function EventDetail() {
                   <path d="M16 17H8" />
                 </svg>
                 <p
-                  className="text-white text-xl md:text-2xl uppercase tracking-[-0.02em] font-black"
+                  className="text-white text-xl md:text-2xl uppercase tracking-[-0.02em] font-medium"
                   style={{
                     fontFamily:
                       'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
@@ -683,7 +683,7 @@ export default function EventDetail() {
                     <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
                   </svg>
                   <p
-                    className="text-white text-xl md:text-2xl uppercase tracking-[-0.02em] font-black"
+                    className="text-white text-xl md:text-2xl uppercase tracking-[-0.02em] font-medium"
                     style={{
                       fontFamily:
                         'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
@@ -731,7 +731,7 @@ export default function EventDetail() {
                   strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className=            "w-5 h-5 text-red-500/60"
+                  className="w-5 h-5 text-red-500/60"
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
