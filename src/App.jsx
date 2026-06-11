@@ -39,6 +39,7 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const [numOfImagesLoaded, setNumOfImagesLoaded] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [showNotice, setShowNotice] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
 
   const [muted, setMuted] = useState(true);
@@ -108,6 +109,7 @@ function App() {
     if (numOfImagesLoaded >= totalImages) {
       const timeout = setTimeout(() => {
         setIsLoading(false);
+        setShowNotice(true);
       }, 500);
 
       return () => clearTimeout(timeout);
@@ -235,7 +237,7 @@ function App() {
         className={`
           transition-opacity
           duration-700
-          ${isLoading ? "opacity-0" : "opacity-100"}
+          ${isLoading || showNotice ? "opacity-0" : "opacity-100"}
         `}
       >
         <Routes>
@@ -247,6 +249,7 @@ function App() {
                 <Hero
                   incrementImagesLoaded={incrementImagesLoaded}
                   skipIntro={location.state?.scrollToEvents}
+                  canStartIntro={!isLoading && !showNotice}
                 />
                 <EventsSection />
                 <Footer />
@@ -293,6 +296,46 @@ function App() {
           <p className="mt-5 text-[10px] md:text-xs tracking-[0.3em] font-mono text-white/40">
             {Math.floor(progress)}%
           </p>
+        </div>
+      )}
+
+      {/* NOTICE OVERLAY */}
+      {showNotice && (
+        <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black px-4">
+          <div className="absolute inset-0 scanlines opacity-30" />
+          <div className="crt-frame max-md:!inset-2" />
+
+          <div className="relative max-w-lg w-full">
+            {/* Top HUD bar */}
+            <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-8 font-mono text-red-500 text-[9px] md:text-xs tracking-[0.25em] md:tracking-[0.3em] uppercase">
+              <span className="rec-dot max-md:w-2 max-md:h-2" />
+              <span className="max-md:hidden">──</span>
+              ANNOUNCEMENT
+              <span className="flex-1 h-px bg-red-500/30" />
+              <span className="text-red-400/60 max-md:hidden">SIGNAL v1.0</span>
+            </div>
+
+            {/* Message */}
+            <div className="border border-red-500/20 bg-red-950/10 p-4 md:p-8">
+              <ul className="text-white/90 text-sm md:text-base leading-relaxed text-left font-mono space-y-2 md:space-y-2.5 list-disc list-inside">
+                <li>Inauguration at ESB Seminar Hall 2</li>
+                <li>Spot registration at 8:30 AM at gate number 10</li>
+              </ul>
+            </div>
+
+            {/* Bottom bar */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-3 mt-4 md:mt-8">
+              <span className="text-red-500/40 font-mono text-[8px] md:text-[10px] tracking-[0.2em] uppercase">
+                ── SYSTEM MESSAGE ──
+              </span>
+              <button
+                onClick={() => setShowNotice(false)}
+                className="border border-red-500/40 text-red-500 px-8 py-2 md:px-6 md:py-1.5 text-xs md:text-xs tracking-[0.3em] uppercase font-mono hover:bg-red-500/10 hover:border-red-500/60 transition-all duration-300 w-full md:w-auto"
+              >
+                OK
+              </button>
+            </div>
+          </div>
         </div>
       )}
 
